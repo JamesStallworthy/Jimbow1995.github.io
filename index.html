@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="google-signin-clientid" content="13435419469-a3sqjhbfgcrdanuknms80ga3ajvhsdpj.apps.googleusercontent.com" />
+      <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+      <meta name="google-signin-callback" content="signinCallback" />
+      <meta name="google-signin-scope" content="https://www.googleapis.com/auth/games" />
+      <title>Game</title>
+      <style>
+         * { padding: 0; margin: 0; }
+         canvas { background: #eee; display: block; margin: 0 auto; }
+      </style>
+       <script type="text/javascript" src="winScreen.js" charset="utf-8" defer></script>
+       <script type="text/javascript" src="loseScreen.js" charset="utf-8" defer></script>
+       <script type="text/javascript" src="menu.js" charset="utf-8" defer></script>
+       <script type="text/javascript" src="checkScript.js" charset="utf-8" defer></script>
+       <script type="text/javascript" src="arrow.js" charset="utf-8" defer></script>  
+       <script type="text/javascript" src="counter.js" charset="utf-8" defer></script>
+       <script type="text/javascript" src="grid.js" charset="utf-8" defer></script> 
+       <script type="text/javascript" src="user.js" charset="utf-8" defer></script> 
+       <script type="text/javascript" src="game.js" charset="utf-8" defer></script>
+       <script src="https://apis.google.com/js/client.js" defer></script>
+   </head>
+    <script>
+       var signinCallback = function(auth){
+           handleAuthResult(auth);     
+    } 
+    </script>
+   <body>
+      <canvas id="connect4Canvas" width="640" height="480"></canvas>
+      <script ></script>
+   </body>
+</html>
