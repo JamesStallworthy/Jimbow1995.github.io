@@ -24,12 +24,7 @@ function handleAuthResult(auth){
         console.log("Logged in");
     } else {
         console.log("Login failed");
-        gapi.auth.signIn({
-  scope: 'https://www.googleapis.com/auth/plus.login',
-  callback: function(authResponse) {
-    console.log(authResponse);
-  }
-});
+        gapi.auth.signIn();
   }
 }
 
