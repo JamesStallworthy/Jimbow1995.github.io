@@ -13,16 +13,6 @@ var LoseS = new loseScreen();
 //determines what state the user is in
 var gamestate="menu";
 
-function handleAuthResult(auth){
-    console.log(auth);
-    if (auth && auth.error == null) {
-        console.log("Logged in");
-    } else {
-        console.log("Login failed");
-        gapi.auth.signIn();
-  }
-}
-
 update();
 
 //Main game loop
