@@ -13,11 +13,6 @@ var LoseS = new loseScreen();
 //determines what state the user is in
 var gamestate="menu";
 
- var signinCallback = function(auth){
-            console.log("123");
-            handleAuthResult(auth);
-}
-
 function handleAuthResult(auth){
     console.log(auth);
     if (auth && auth.error == null) {
