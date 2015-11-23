@@ -24,14 +24,23 @@ function load(){
 }
 
 function loadLeaderboard(){
-
+/*
  var request = gapi.client.games.leaderboards.list(
       {maxResults: 5}
     );
     request.execute(function(response) {
         console.log('Leaderboard data', response);
       // Do something interesting with the response
-    });
+    });*/
+    
+     var request = gapi.client.games.scores.list(
+      {
+        leaderboardId: "CgkIw5Xv3M4GEAIQAQ"
+      }
+  );
+  request.execute(function(response) {
+    console.log('This is your data: ', response);
+  });
     
 }
 
