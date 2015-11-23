@@ -17,6 +17,7 @@ update();
 
 //Main game loop
 function update(){
+    
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){

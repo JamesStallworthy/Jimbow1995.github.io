@@ -56,6 +56,7 @@ arrow.prototype.moveArrow = function(){
                 this.pickerPlace = 6; 
             }      
         }
+      
         if(this.arrowData.x >= 521){
             this.arrowData.x = 521;
         }
@@ -78,9 +79,54 @@ arrow.prototype.moveArrow = function(){
 		}
 }
 
+arrow.prototype.moveArrowMouse = function(xpos,ypos){
+                if(xpos >= 65 && xpos <= 135){
+                    this.arrowData.x = 74;  
+                    this.pickerPlace = 0;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                }
+                else if(xpos >= 136 && xpos <=207){
+                    this.arrowData.x = 154;
+                    this.pickerPlace = 1;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }
+                else if(xpos >= 208 && xpos <=280){
+                    this.arrowData.x = 228;
+                    this.pickerPlace = 2;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }
+                else if(xpos >= 281 && xpos <=355){
+                    this.arrowData.x = 302;
+                    this.pickerPlace =3;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }
+                else if(xpos >= 356 && xpos <=430){
+                    this.arrowData.x = 376;
+                    this.pickerPlace = 4;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }
+                else if(xpos >= 431 && xpos <=505){
+                    this.arrowData.x = 450;
+                    this.pickerPlace = 5;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }        
+                else if(xpos >= 506 && xpos <=580){
+                    this.arrowData.x = 524;
+                    this.pickerPlace = 6;
+                    this.Turn++;
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+               }
+}
+
+
 // uses spacebar to place a counter, it works out what whose turn it is and places the right colour counter
-arrow.prototype.placeCounter = function()
-{
+arrow.prototype.placeCounter = function(){
   if(Grid.grid[this.pickerPlace][5] == 0)
     {
         if(this.Turn % 2 == 0) // uses modulous to see whose go it is, if the turn is not even then it is player 1s if it sint its player 2s 

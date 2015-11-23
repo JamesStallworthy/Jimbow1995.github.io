@@ -44,5 +44,6 @@ function mouseDownHandler()
       WinS.clicked(mouseX, mouseY);
     if(gamestate == "loser")
       LoseS.clicked(mouseX, mouseY);
-    
+    if(gamestate == "single")    
+        Arrow.moveArrowMouse(mouseX,mouseY); 
 }
