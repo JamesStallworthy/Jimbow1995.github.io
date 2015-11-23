@@ -17,11 +17,12 @@ function load(){
         if(response == null)
             console.log("Everything is good so far....");
       });
-     var request = gapi.client.games.scores.submit(
-        {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
-        score: 10}
+  
+    var request = gapi.client.games.leaderboards.list(
+      {maxResults: 5}
     );
     request.execute(function(response) {
-      // Check to see if this is a new high score
-    })
+        console.log('Leaderboard data', response);
+      // Do something interesting with the response
+    });
 }
