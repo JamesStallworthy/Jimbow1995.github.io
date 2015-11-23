@@ -12,7 +12,7 @@ function handleAuthResult(auth){
 
 function load(){
     console.log("Running load function");
-    gapi.client.load('ges','v1',function(response) {
+    gapi.client.load('games','v1',function(response) {
         // Ready to make calls!
         if(response == null)
             console.log("Everything is good so far....");
