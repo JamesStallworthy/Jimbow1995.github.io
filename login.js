@@ -19,5 +19,6 @@ function load(){
     );
     request.execute(function(response) {
       // Do something interesting with the response
+        console.log(response);
     });
 }
