@@ -16,13 +16,14 @@ function load(){
         // Ready to make calls!
         if(response == null)
             console.log("Everything is good so far....");
-      });
-  
-    var request = gapi.client.games.leaderboards.list(
+         var request = gapi.client.games.leaderboards.list(
       {maxResults: 5}
     );
     request.execute(function(response) {
         console.log('Leaderboard data', response);
       // Do something interesting with the response
     });
+      });
+  
+   
 }
