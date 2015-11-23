@@ -14,6 +14,14 @@ function load(){
     console.log("Running load function");
     gapi.client.load('ges','v1',function(response) {
         // Ready to make calls!
-        console.log(response);
+        if(response == null)
+            console.log("Everything is good so far....");
       });
+     var request = gapi.client.games.scores.submit(
+        {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
+        score: 10}
+    );
+    request.execute(function(response) {
+      // Check to see if this is a new high score
+    })
 }
