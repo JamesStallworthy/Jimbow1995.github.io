@@ -16,6 +16,7 @@ function load(){
         // Ready to make calls!
         if(response == null){
             loadLeaderboard();
+            testScore();
         }
       });
   
@@ -32,4 +33,14 @@ function loadLeaderboard(){
       // Do something interesting with the response
     });
     
+}
+
+function testScore(){
+     var request = gapi.client.games.scores.submit(
+        {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
+        score: 10}
+    );
+    request.execute(function(response) {
+      // Check to see if this is a new high score
+    })
 }
