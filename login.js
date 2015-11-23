@@ -36,6 +36,7 @@ function loadLeaderboard(){
 }
 
 function testScore(){
+    console.log("new score added");
      var request = gapi.client.games.scores.submit(
         {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
         score: 10}
