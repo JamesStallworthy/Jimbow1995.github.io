@@ -44,8 +44,6 @@ function testScore(){
     console.log("new score added");
      var request = gapi.client.games.scores.submit(
         {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
-         collection :"PUBLIC",
-         timeSpan : 'ALL_TIME',
          score: 9}
     );
     request.execute(function(response) {
