@@ -29,7 +29,7 @@ function loadLeaderboard(){
     );
     request.execute(function(response) {
         //console.log('Leaderboard data', response);
-      	console.log(response.items[1]);
+      	console.log(response.items);
 
     });
     
