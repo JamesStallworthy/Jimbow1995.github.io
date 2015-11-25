@@ -24,15 +24,22 @@ function load(){
 }
 
 function loadLeaderboard(){
- var request = gapi.client.games.leaderboards.list(
-      {maxResults: 5}
-    );
+// var request = gapi.client.games.leaderboards.list(
+//      {maxResults: 5}
+//    );
+//    request.execute(function(response) {
+//        //console.log('Leaderboard data', response);
+//      	console.log(response.items);
+//
+//    });
+    var json={};
+    json.leaderboardId='dlsfhqo3irhq';
+    json.collection='PUBLIC';
+    json.timeSpan='ALL_TIME';
+    var respone = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        //console.log('Leaderboard data', response);
-      	console.log(response.items[0]);
-
+        console.log('Leaderboard data', response);
     });
-    
 }
 
 function testScore(){
