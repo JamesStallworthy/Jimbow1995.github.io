@@ -36,7 +36,7 @@ function loadLeaderboard(){
     json.leaderboardId='CgkIw5Xv3M4GEAIQAQ';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        console.log('Leaderboard data', response);
+        console.log('Leaderboard data', response[1]);
     });
 }
 
