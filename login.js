@@ -34,7 +34,7 @@ function loadLeaderboard(){
 //    });
     var json={};
     json.leaderboardId='CgkIw5Xv3M4GEAIQAQ';
-    json.collection='PUBLIC';
+    json.collection='PRIVATE';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
@@ -46,6 +46,8 @@ function testScore(){
     console.log("new score added");
      var request = gapi.client.games.scores.submit(
         {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
+         collection :"PUBLIC",
+         timeSpan : "ALL_TIME",
         score: 9}
     );
     request.execute(function(response) {
