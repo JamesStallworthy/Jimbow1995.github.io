@@ -37,7 +37,7 @@ function loadLeaderboard(){
 //    var json= { leaderboardId: 'CgkIw5Xv3M4GEAIQAQ', collection: 'PUBLIC', timeSpan:'ALL_TIME'};
 //    var request = gapi.client.games.scores.listWindow(json);
 //    request.execute(function(response) { 
-//         console.log(response.items);
+//         console.log(response.items[1].id);
 //    });
 //}
 
