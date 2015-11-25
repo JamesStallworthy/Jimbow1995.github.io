@@ -1,6 +1,20 @@
 var canvas = document.getElementById("connect4Canvas");
 var ctx = canvas.getContext("2d");
 
+//resize 
+window.addEventListener('resize', function(){ resize();})
+
+var screenWidth = 640;
+var screenHeight = 480;
+
+var ratio = screenHeight/screenWidth;
+
+var currentWidth = screenWidth;
+var currentHeight = screenHeight;
+
+canvas.width = screenWidth;
+canvas.height = screenHeight;
+
 //Init objects
 var Grid = new grid();
 var Counter = new counters();
@@ -53,4 +67,20 @@ function update(){
 function reset(){
     Grid.clearArray();
     Arrow.resetArrow();
+}
+
+function resize(){
+    ratio =  screenHeight / screenWidth;
+    
+    currentWidth = window.innerHeight;
+    currentHeight = ratio * currentWidth;
+    
+    canvas.style.width = currentWidth + 'px';
+    canvas.style.height = currentHeight + 'px';
+    
+    // we use a timeout here because some mobile
+    // browsers don't fire if there is not
+    // a short delay
+    window.setTimeout(function() {window.scrollTo(0,1);}, 1);
+
 }

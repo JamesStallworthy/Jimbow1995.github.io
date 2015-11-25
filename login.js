@@ -23,7 +23,7 @@ function load(){
    
 }
 
-/*function loadLeaderboard(){
+function loadLeaderboard(){
  var request = gapi.client.games.leaderboards.list(
       {maxResults: 5}
     );
@@ -32,14 +32,14 @@ function load(){
       // Do something interesting with the response
     });
     
-}*/
-function loadLeaderboard(){
-    var json= { leaderboardId: 'CgkIw5Xv3M4GEAIQAQ', collection: 'PUBLIC', timeSpan:'ALL_TIME'};
-    var request = gapi.client.games.scores.listWindow(json);
-    request.execute(function(response) { 
-         console.log(response);
-    });
 }
+//function loadLeaderboard(){
+//    var json= { leaderboardId: 'CgkIw5Xv3M4GEAIQAQ', collection: 'PUBLIC', timeSpan:'ALL_TIME'};
+//    var request = gapi.client.games.scores.listWindow(json);
+//    request.execute(function(response) { 
+//         console.log(response.items);
+//    });
+//}
 
 function testScore(){
     console.log("new score added");
