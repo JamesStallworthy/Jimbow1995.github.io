@@ -28,18 +28,12 @@ function loadLeaderboard(){
       {maxResults: 5}
     );
     request.execute(function(response) {
-        console.log('Leaderboard data', response);
-      // Do something interesting with the response
+        //console.log('Leaderboard data', response);
+      	console.log(response.items[1]);
+
     });
     
 }
-//function loadLeaderboard(){
-//    var json= { leaderboardId: 'CgkIw5Xv3M4GEAIQAQ', collection: 'PUBLIC', timeSpan:'ALL_TIME'};
-//    var request = gapi.client.games.scores.listWindow(json);
-//    request.execute(function(response) { 
-//         console.log(response.items[1].id);
-//    });
-//}
 
 function testScore(){
     console.log("new score added");
