@@ -36,7 +36,11 @@ function loadLeaderboard(){
     json.leaderboardId='dlsfhqo3irhq';
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
+<<<<<<< HEAD
     var reqest gapi.client.games.scores.listWindow(json);
+=======
+    var respone = gapi.client.games.scores.listWindow(json);
+>>>>>>> parent of 72c1505... Commit
     request.execute(function(response) {
         console.log('Leaderboard data', response);
     });
