@@ -33,7 +33,7 @@ function loadLeaderboard(){
 //
 //    });
     var json={};
-    json.leaderboardId='dlsfhqo3irhq';
+    json.leaderboardId='CgkIw5Xv3M4GEAIQAQ';
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var respone = gapi.client.games.scores.listWindow(json);
