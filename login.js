@@ -32,14 +32,14 @@ function loadLeaderboard(){
 //      	console.log(response.items);
 //
 //    });
-//    var json={};
-//    json.leaderboardId='CgkIw5Xv3M4GEAIQAw';
-//    json.collection='PUBLIC';
-//    json.timeSpan='ALL_TIME';
-//    var request = gapi.client.games.scores.listWindow(json);
-//    request.execute(function(response) {
-//        console.log('Leaderboard data', response);
-//    });
+    var json={};
+    json.leaderboardId='CgkIw5Xv3M4GEAIQAw';
+    json.collection='SOCIAL';
+    json.timeSpan='ALL_TIME';
+    var request = gapi.client.games.scores.listWindow(json);
+    request.execute(function(response) {
+        console.log('Leaderboard data', response);
+    });
 }
 
 function testScore(){
