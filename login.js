@@ -19,11 +19,9 @@ function load(){
             //testScore();
             var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
             var b = new leaderboardController('CgkIw5Xv3M4GEAIQAw');
-            console.log(a.data.items[0].formattedScore);
         }
       });
-  
-   
+    console.log(a.data.items[0].formattedScore);
 }
 /*
   var json={};
