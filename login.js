@@ -22,7 +22,17 @@ function load(){
   
    
 }
+/*
+  var json={};
+    json.leaderboardId='CgkIw5Xv3M4GEAIQAQ';
+    json.collection='PUBLIC';
+    json.timeSpan='ALL_TIME';
+    var request = gapi.client.games.scores.listWindow(json);
+    request.execute(function(response) {
+        console.log('Leaderboard data', response);
+    });
 
+*/
 function loadLeaderboard(){
 // var request = gapi.client.games.leaderboards.list(
 //      {maxResults: 5}
@@ -47,7 +57,7 @@ function testScore(){
      var request = gapi.client.games.scores.submit(
         {leaderboardId: "CgkIw5Xv3M4GEAIQAQ",
          timeSpan : "ALL_TIME",
-        score: 9}
+        score: 12}
     );
     request.execute(function(response) {
       // Check to see if this is a new high score
