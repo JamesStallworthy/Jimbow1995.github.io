@@ -33,9 +33,6 @@ update();
 
 //Main game loop
 function update(){
-    if (loginComplete){
-        var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
-    }
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){
