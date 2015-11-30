@@ -28,8 +28,8 @@ leaderboardController.prototype.loadLeaderboard = function(){
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
-    request.execute(score = function(response) {
-            return response;
+    request.execute(function(response) {
+        
         }
     );
     console.log(score);
