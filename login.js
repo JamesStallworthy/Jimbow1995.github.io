@@ -19,7 +19,7 @@ function load(){
             //testScore();
             var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
             var b = new leaderboardController('CgkIw5Xv3M4GEAIQAw');
-            console.log(a.data[0].scoreRank);
+            //console.log(a.data[0].scoreRank);
         }
       });
   
