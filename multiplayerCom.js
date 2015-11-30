@@ -115,7 +115,7 @@ function getData(){
             });
         
         newRequest.execute(function(response){
-            console.log("Match data: "response.userMatchStatus);
+            console.log("Match data: ", response.userMatchStatus);
             console.log(atob(response.data.data));
         });
     });
