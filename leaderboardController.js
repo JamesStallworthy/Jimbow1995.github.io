@@ -33,19 +33,20 @@
 //    );
 //}
 
-function loadLeaderboard(id){
+function loadLeaderboard(id, leader){
     var json={};
     json.leaderboardId=id;
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) { 
-            storeLeaderboard(response.items);
+            storeLeaderboard(response.items, leader);
         
         }
     );
 }
 
-function storeLeaderboard(data){
+function storeLeaderboard(data , leader){
+    console.log(leader);
     console.log(data);
 }
