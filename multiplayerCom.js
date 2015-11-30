@@ -115,9 +115,7 @@ function getData(){
             });
         
         newRequest.execute(function(response){
-            if (response.userMatchStatus != "USER_AWAITING_TURN"){
-                gamestate == "takeTurn";
-            }
+            console.log("Match data: "response.userMatchStatus);
             console.log(atob(response.data.data));
         });
     });
