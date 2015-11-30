@@ -6,7 +6,19 @@ function leaderboardController(ID){
 }
 
 leaderboardController.prototype.submitScore = function(score){
-    
+     var request = gapi.client.games.scores.submit(
+        {leaderboardId: this.id,
+         timeSpan : "ALL_TIME",
+        score: score}
+    );
+    request.execute(function(response) {
+        if(response == null){
+            console.log("New score submitted");
+        }
+        else{
+            console.log("error", response);
+        } 
+    });
 }
 
 leaderboardController.prototype.loadLeaderboard = function(){
@@ -18,7 +30,6 @@ leaderboardController.prototype.loadLeaderboard = function(){
     request.execute(function(response) {
         this.data = response.items;
         this.numOfScores = this.data.length;
-        console.log(this.numOfScores);
-        console.log(this.data);
+        console.log("leaderboard data", this.data);
     });
 }

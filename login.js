@@ -18,6 +18,7 @@ function load(){
             //loadLeaderboard();
             //testScore();
             var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
+            var b = new leaderboardController('CgkIw5Xv3M4GEAIQAw');
         }
       });
   
@@ -54,5 +55,5 @@ function testScore(){
     );
     request.execute(function(response) {
       // Check to see if this is a new high score
-    })
+    });
 }
