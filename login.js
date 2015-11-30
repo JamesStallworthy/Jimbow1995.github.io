@@ -22,7 +22,6 @@ function load(){
             var b = new leaderboardController('CgkIw5Xv3M4GEAIQAw');
         }
       });
-    console.log(a.data[0].formattedScore);
 }
 /*
   var json={};
