@@ -54,7 +54,7 @@ function initGame(){
            "matchVersion": 1,
        });
         newRequest.execute(function(response){
-            console.log(resposne);
+            console.log(response);
         });
     });
 }
