@@ -31,7 +31,9 @@ function keyUpHandler(e) {
             Arrow.spacebarPressed =false;   
         }
         else if(e.keyCode == 97){
+            console.log("A pressed");
             if(googleAPILoaded){
+                console.log("About to load");
                 loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
             }
         }
