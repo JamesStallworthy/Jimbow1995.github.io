@@ -1,6 +1,6 @@
 function leaderboardController(ID){
     this.id = ID;
-    this.data = new Array();
+    this.data;
     this.numOfScores;
     this.loadLeaderboard(ID);
 }
@@ -28,8 +28,8 @@ leaderboardController.prototype.loadLeaderboard = function(){
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        this.data = response.items;
-        this.numOfScores = this.data.length;
+        this.data = response;
+        this.numOfScores = response.items.length;
         console.log(response);
     });
 }
