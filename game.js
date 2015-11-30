@@ -23,7 +23,6 @@ var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
 var LoseS = new loseScreen();
-var leader = new leaderboardController();
 
 //determines what state the user is in
 var gamestate="menu";
