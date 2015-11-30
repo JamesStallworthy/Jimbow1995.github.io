@@ -40,7 +40,7 @@ function loadLeaderboard(id){
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) { 
-            console.log(response.items);
+            storeLeaderboard(response.items);
         
         }
     );
