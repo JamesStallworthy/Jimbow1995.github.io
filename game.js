@@ -32,7 +32,7 @@ var leaderboardData = new Array();
 
 var loginComplete = false;
 var leaderBoardLoading = false;
-var leaderBoardDataLoaded = true;
+var leaderBoardDataLoaded = false;
 
 update();
 
@@ -43,8 +43,10 @@ function update(){
             leader.loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
         }
     }
-    if (leaderBoardDataLoaded)
+    if (leaderBoardDataLoaded){
         console.log(leaderboardData);
+        leaderBoardDataLoaded = false;
+    }
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){
