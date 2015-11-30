@@ -50,12 +50,10 @@ grid.prototype.drawCountersToGrid = function(){
         for (var y = 0; y < 6 ; y++){
             if(this.grid[x][y]!=0){
                 if(this.grid[x][y]==1){
-                    console.log("Drawing red");
                     ctx.drawImage(Counter.redCounterImg,70+(x*74),407 - (y*74));
                     Check.check(x,y,1);
                 }
                 if(this.grid[x][y]==2){
-                    console.log("Drawing yellow");
                     ctx.drawImage(Counter.yellowCounterImg,70+(x*74),407 - (y*74));
                     Check.check(x,y,2);
                 }

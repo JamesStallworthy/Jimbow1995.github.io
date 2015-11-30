@@ -16,7 +16,7 @@ function multiplayerController(){
         createGame();
     }
     else if (gamestate == "takeTurn"){
-        console.log(Grid.grid);
+        
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         Arrow.drawArrow();
