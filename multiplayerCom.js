@@ -124,7 +124,7 @@ function getData(){
             console.log("Match data: ", response.userMatchStatus);
             if (response.userMatchStatus == "USER_TURN"){
                 console.log("User took there turn");
-                gamestate == "takeTurn";
+                gamestate = "takeTurn";
             }
             console.log("gamestate after getData: ", gamestate);
             console.log(atob(response.data.data));
