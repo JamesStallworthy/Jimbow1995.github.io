@@ -16,6 +16,7 @@ function load(){
         // Ready to make calls!
         if(response == null){
             loginComplete = true;
+            var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
         }
       });
 }
