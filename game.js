@@ -32,7 +32,7 @@ var googleAPILoaded = false;
 //leaderboard vars
 var leaderboardData = new Array;
 var leaderboardDataLoading = false;
-var leaderboardDataloaded = false;
+var leaderboardDataLoaded = false;
 
 update();
 
