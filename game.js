@@ -43,7 +43,7 @@ function update(){
      if(googleAPILoaded){
         if (!leaderboardDataLoading){
             if (!leaderboardDataLoaded){
-                //loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
+                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
             }
         }
     }
