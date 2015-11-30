@@ -31,7 +31,9 @@ function keyUpHandler(e) {
             Arrow.spacebarPressed =false;   
         }
         else if(e.keyCode == 97){
-            loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
+            if(googleAPILoaded){
+                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
+            }
         }
 
 	}

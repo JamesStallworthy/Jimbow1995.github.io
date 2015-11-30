@@ -27,6 +27,8 @@ var LoseS = new loseScreen();
 //determines what state the user is in
 var gamestate="menu";
 
+var googleAPILoaded = false;
+
 //leaderboard vars
 var leaderboardData = new Array;
 var leaderboardDataLoading = false;

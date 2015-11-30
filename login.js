@@ -15,7 +15,8 @@ function load(){
     gapi.client.load('games','v1',function(response) {
         // Ready to make calls!
         if(response == null){
-            loadLeaderboard('CgkIw5Xv3M4GEAIQAQ',a);
+            console.log("Google API loaded");
+            googleAPILoaded = true;
         }
       });
 }
