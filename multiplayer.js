@@ -112,7 +112,7 @@ function getData(){
             });
         
         newRequest.execute(function(response){
-            console.log("Game joined");
+            console.log(atob(respone.data.data));
         });
     });
 }
