@@ -30,7 +30,7 @@ function keyUpHandler(e) {
         {
             Arrow.spacebarPressed =false;   
         }
-        else if(e.keyCode == 97){
+        else if(e.keyCode == 65){
             console.log("A pressed");
             if(googleAPILoaded){
                 console.log("About to load");
