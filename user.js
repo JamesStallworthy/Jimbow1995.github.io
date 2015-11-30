@@ -16,7 +16,7 @@ function keyDownHandler(e) {
         else if(e.keyCode == 67)
         {
             console.log("c pressed");
-            createGame();
+            //createGame();
         }
         else if(e.keyCode == 88){
             console.log("x pressed");
