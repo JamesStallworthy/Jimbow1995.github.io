@@ -112,7 +112,7 @@ function getData(){
             });
         
         newRequest.execute(function(response){
-            console.log(atob(respone.data.data));
+            console.log(atob(response.data.data));
         });
     });
 }
