@@ -30,7 +30,5 @@ leaderboardController.prototype.loadLeaderboard = function(){
     request.execute(function(response) {
         this.data = response.items;
         this.numOfScores = this.data.length;
-        console.log(response);
-        console.log("leaderboard data", this.data);
     });
 }
