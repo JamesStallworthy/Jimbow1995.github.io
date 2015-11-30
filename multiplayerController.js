@@ -13,15 +13,12 @@ function multiplayerController(){
         console.log("create game");
         createGame();
     }
-    else if (gamestate == "init"){
-        console.log("initing game")
-        initGame();
-    }
     else if (gamestate == "takeTurn"){
         console.log("Take your turn");
     }
     else if (gamestate == "waiting"){
-        getData();
+        console.log("waiting");
+        //getData();
     }
 }
 

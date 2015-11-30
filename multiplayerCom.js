@@ -15,8 +15,8 @@ function createGame(){
     request.execute(function(response)
     {
         console.log("Game created");
-        gamestate = "init";
         console.log(response);
+        initGame();
     }); 
 }
 
