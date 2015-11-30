@@ -34,14 +34,18 @@
 //}
 
 function loadLeaderboard(id){
-    var data = 0;
     var json={};
     json.leaderboardId=id;
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) { 
-            console.log(data);
+            console.log(response.items);
+        
         }
     );
+}
+
+function storeLeaderboard(data){
+    console.log(data);
 }
