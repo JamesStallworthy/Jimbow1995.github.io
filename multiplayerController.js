@@ -2,7 +2,9 @@
 //create
 //init
 //taketurn
-//join
+//waiting
+//recived
+//taketurn
 var inviteID = "107373363902631863467"
 
 function multiplayerController(){
@@ -15,6 +17,7 @@ function multiplayerController(){
     }
     else if (gamestate == "takeTurn"){
         Grid.drawGrid();
+        Grid.drawCountersToGrid();
         Arrow.drawArrow();
         Arrow.placeCounter();
         console.log("Take your turn");
@@ -27,4 +30,8 @@ function multiplayerController(){
 
 function setGameState(gstate){
     gamestate = gstate;
+}
+
+function multiplayerPlaceCounter(col){
+    Grid.insertCounter(col,2);
 }

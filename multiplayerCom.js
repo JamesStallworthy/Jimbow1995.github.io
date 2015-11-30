@@ -125,6 +125,7 @@ function getData(){
             if (response.userMatchStatus == "USER_TURN"){
                 console.log("User took there turn");
                 gamestate = "takeTurn";
+                multiplayerPlaceCounter(atob(response.data.data));
             }
             console.log("gamestate after getData: ", gamestate);
             console.log(atob(response.data.data));
