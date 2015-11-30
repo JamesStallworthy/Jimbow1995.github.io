@@ -29,12 +29,6 @@ leaderboardController.prototype.loadLeaderboard = function(){
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        this.numOfScores = response.items.length;
-        for (var i = 0; i < response.items.length; i++){
-            this.score[0] = i;
-        }
-        console.log('score', this.score);
         
-        console.log(response.items[0].formattedScore);
     });
 }
