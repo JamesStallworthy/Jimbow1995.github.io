@@ -28,13 +28,7 @@ function keyUpHandler(e) {
 		}
          else if(e.keyCode == 32)
         {
-            console.log("Space pressed");
-            
             Arrow.spacebarPressed =false;  
-            if(googleAPILoaded){
-                console.log("About to load");
-                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
-            }
         }
 
 	}

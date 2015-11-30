@@ -35,7 +35,7 @@
 
 function loadLeaderboard(id){
     console.log("loading leaderboard: ", id);
-    leaderboardDataloaded = false;
+    leaderboardDataLoaded = false;
     leaderboardDataLoading = true;
     var json={};
     json.leaderboardId=id;
@@ -45,7 +45,7 @@ function loadLeaderboard(id){
     request.execute(function(response) { 
             console.log("Leaderboard loaded, Data: ", response.items);
             leaderboardData = response.items;
-            leaderboardDataloaded = true;
+            leaderboardDataLoaded = true;
             leaderboardDataLoading = false;
         }
     );
