@@ -87,3 +87,17 @@ function takeTurn(){
         });
     });
 }
+
+function joinGame(){
+    var request = gapi.client.games.turnBasedMatches.list();
+    request.execute(function(response){
+        var newRequest = gapi.client.games.turnBasedMatches.join(
+            {
+                "matchId" : response.items[0].matchId
+            });
+        
+        newRequest.execute(function(response){
+            console.log("Game cancelled");
+        });
+    });
+}
