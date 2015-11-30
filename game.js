@@ -72,6 +72,7 @@ function update(){
         WinS.drawImgWin2();
         //Player 2 win screen
     }
+    multiplayerController();
     if(gamestate == "quit"){
       //QUIT code
     }
