@@ -28,7 +28,6 @@ function loadLeaderboard(id){
             leaderboardData = response.items;
             leaderboardDataLoaded = true;
             leaderboardDataLoading = false;
-            submitScore('CgkIw5Xv3M4GEAIQAQ', 14);
         }
     );
 }
