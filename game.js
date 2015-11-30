@@ -27,11 +27,13 @@ var LoseS = new loseScreen();
 //determines what state the user is in
 var gamestate="menu";
 
+var loginComplete = false;
+
 update();
 
 //Main game loop
 function update(){
-    
+    console.log("LoginComplete", loginComplete);
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){
