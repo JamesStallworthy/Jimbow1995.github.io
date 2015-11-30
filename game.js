@@ -23,16 +23,28 @@ var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
 var LoseS = new loseScreen();
+var leader = new leaderboardController();
 
 //determines what state the user is in
 var gamestate="menu";
 
+var leaderboardData = new Array();
+
 var loginComplete = false;
+var leaderBoardLoading = false;
+var leaderBoardDataLoaded = true;
 
 update();
 
 //Main game loop
 function update(){
+    if (loginComplete){
+        if(!leaderBoardLoading){
+            leader.loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
+        }
+    }
+    if (leaderBoardDataLoaded)
+        console.log(leaderboardData);
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){

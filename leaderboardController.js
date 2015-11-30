@@ -18,13 +18,17 @@ leaderboardController.prototype.submitScore = function(id,score){
 }
 
 leaderboardController.prototype.loadLeaderboard = function(id){
+    leaderBoardLoading = true;
+    console.log("Loading leaderboard");
     var json={};
     json.leaderboardId=id;
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-
+            leaderBoardDataLoaded = true;
+            console.log("Data loaded");
+            leaderboardData = response.items;
         }
     );
 }
