@@ -18,7 +18,7 @@ function multiplayerController(){
         initGame();
     }
     else if (gamestate == "takeTurn"){
-        
+        console.log("Take your turn");
     }
     else if (gamestate == "waiting"){
         getData();
