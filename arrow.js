@@ -140,15 +140,15 @@ arrow.prototype.placeCounter = function(){
 
         if(this.spacebarPressed)
             {
-                Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
-                this.Turn++;
-                this.spacebarPressed = false;
+                if (gamestate == "takeTurn"){
+                    Grid.insertCounter(Arrow.pickerPlace,1);
+                    takeTurn(Arrow.pickerPlace);
+                    this.spacebarPressed = false;
+                }else{
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    this.Turn++;
+                    this.spacebarPressed = false;
+                }
             }
     }
-    if (gamestate == "takeTurn"){
-        Grid.insertCounter(Arrow.pickerPlace,1);
-        takeTurn(Arrow.pickerPlace);
-        this.spacebarPressed = false;
-    }
-    
 }
