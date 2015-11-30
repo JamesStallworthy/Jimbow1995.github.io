@@ -142,6 +142,7 @@ arrow.prototype.placeCounter = function(){
             {
                 if (gamestate == "takeTurn"){
                     Grid.insertCounter(Arrow.pickerPlace,1);
+                    console.log("Your turn was: ", Arrow.pickerPlace);
                     takeTurn(Arrow.pickerPlace);
                     this.spacebarPressed = false;
                 }else{
