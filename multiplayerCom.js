@@ -1,4 +1,5 @@
 function createGame(){
+    gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.create({
         "kind" : "games#turnBasedMatchCreateRequest",
         "variant": 0,
@@ -56,12 +57,14 @@ function initGame(){
            "matchVersion": 1,
        });
         newRequest.execute(function(response){
+            gamestate = "takeTurn";
             console.log(response);
         });
     });
 }
 
 function takeTurn(dataToSend){
+    gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.list();
     
     request.execute(function(response){
@@ -106,6 +109,7 @@ function joinGame(){
 }
 
 function getData(){
+    gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function(response){
         var newRequest = gapi.client.games.turnBasedMatches.get(
