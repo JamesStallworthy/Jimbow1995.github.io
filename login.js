@@ -17,7 +17,7 @@ function load(){
         if(response == null){
             //loadLeaderboard();
             //testScore();
-            var a = new leaderboardController("CgkIw5Xv3M4GEAIQAQ");
+            var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
         }
       });
   

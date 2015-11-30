@@ -8,16 +8,14 @@ leaderboardController.prototype.submitScore = function(score){
    
 }
 
-leaderboardController.prototype.loadLeaderboard = function(id){
+leaderboardController.prototype.loadLeaderboard = function(){
      var json={};
     json.leaderboardId=this.id;
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        console.log(this.id)
-        console.log('Leaderboard data for' , response);
-        this.data = response;
+        this.data = response.items;
         console.log(this.data);
     });
 }
