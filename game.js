@@ -27,8 +27,6 @@ var LoseS = new loseScreen();
 //determines what state the user is in
 var gamestate="menu";
 
-loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
-
 update();
 
 //Main game loop
