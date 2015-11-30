@@ -1,3 +1,5 @@
+'use strict'
+
 function leaderboardController(ID){
     this.id = ID;
     this.score = new Array;
