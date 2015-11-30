@@ -145,5 +145,10 @@ arrow.prototype.placeCounter = function(){
                 this.spacebarPressed = false;
             }
     }
+    if (gamestate == "takeTurn"){
+        Grid.insertCounter(Arrow.pickerPlace,1);
+        takeTurn(Arrow.pickerPlace);
+        this.spacebarPressed = false;
+    }
     
 }
