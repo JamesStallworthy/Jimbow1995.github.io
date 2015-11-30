@@ -5,7 +5,7 @@ function submitScore(id, score){
         score: score}
     );
     request.execute(function(response) {
-        if(response == null){
+        if(response != null){
             console.log("New score submitted");
         }
         else{
