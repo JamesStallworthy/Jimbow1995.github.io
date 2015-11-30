@@ -24,6 +24,8 @@ function multiplayerController(){
         console.log("Take your turn");
     }
     else if (gamestate == "waiting"){
+        Grid.drawGrid();
+        Grid.drawCountersToGrid();
         console.log("waiting");
         //getData();
     }
