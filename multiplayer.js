@@ -97,7 +97,7 @@ function joinGame(){
             });
         
         newRequest.execute(function(response){
-            console.log("Game cancelled");
+            console.log("Game joined");
         });
     });
 }
