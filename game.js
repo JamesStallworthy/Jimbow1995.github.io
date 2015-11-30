@@ -36,6 +36,8 @@ var leaderboardDataLoaded = false;
 
 update();
 
+console.log("c = create, x = cancel, l = lists");
+
 //Main game loop
 function update(){
      if(googleAPILoaded){

@@ -13,25 +13,21 @@ function keyDownHandler(e) {
         {
             Arrow.spacebarPressed =true;   
         }
+        else if(e.keyCode == 67)
+        {
+            console.log("c pressed");
+            createGame();
+        }
+        else if(e.keyCode == 88){
+            console.log("x pressed");
+            cancelGame();
+        }
+        else if(e.keyCode == 76){
+            console.log("l pressed");
+            activeGames();
+        }
     
 }
-
-function keyUpHandler(e) {
-		//39 is the keycode for left arrow
-		if(e.keyCode == 39) {
-			Arrow.rightPressed = false;
-            
-		}
-		//37 is the keyCode for right arrow
-		else if(e.keyCode == 37) {
-			Arrow.leftPressed = false;
-		}
-         else if(e.keyCode == 32)
-        {
-            Arrow.spacebarPressed =false;  
-        }
-
-	}
 
 //When mouse us pressed get location and pass to location check
 function mouseDownHandler()
