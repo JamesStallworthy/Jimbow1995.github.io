@@ -11,18 +11,17 @@ function handleAuthResult(auth){
 }
 
 function load(){
-    var a;
     console.log("Running load function");
     gapi.client.load('games','v1',function(response) {
         // Ready to make calls!
         if(response == null){
             //loadLeaderboard();
             //testScore();
-            a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
+            var a = new leaderboardController('CgkIw5Xv3M4GEAIQAQ');
             var b = new leaderboardController('CgkIw5Xv3M4GEAIQAw');
+            console.log(a.numOfScores);
         }
       });
-    console.log(a.numOfScores);
 }
 /*
   var json={};
