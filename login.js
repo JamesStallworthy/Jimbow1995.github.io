@@ -34,8 +34,8 @@ function loadLeaderboard(){
 //    });
     var json={};
     json.leaderboardId='CgkIw5Xv3M4GEAIQAQ';
-    json.collection='SOCIAL';
-    json.timeSpan='ALL_TIME';
+    json.collection='ALL';
+    json.timeSpan='ALL';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
         console.log('Leaderboard data', response);
