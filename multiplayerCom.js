@@ -89,6 +89,7 @@ function takeTurn(dataToSend){
                "matchVersion": response.items[0].matchVersion,
            });
             newRequest.execute(function(response){
+                console.log("turn taken");
                 gamestate = "waiting"
                 console.log(response);
         });
