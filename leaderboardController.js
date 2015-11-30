@@ -1,11 +1,12 @@
 function leaderboardController(ID){
     this.id = ID;
     this.data;
+    this.numOfScores;
     this.loadLeaderboard(ID);
 }
 
 leaderboardController.prototype.submitScore = function(score){
-   
+    
 }
 
 leaderboardController.prototype.loadLeaderboard = function(){
@@ -16,6 +17,8 @@ leaderboardController.prototype.loadLeaderboard = function(){
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
         this.data = response.items;
+        this.numOfScores = this.data.length;
+        console.log(this.numOfScores);
         console.log(this.data);
     });
 }
