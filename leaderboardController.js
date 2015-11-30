@@ -29,8 +29,8 @@ leaderboardController.prototype.loadLeaderboard = function(){
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        
+            console.log("1");
         }
     );
-    console.log(score);
+    console.log("2");
 }
