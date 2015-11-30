@@ -39,7 +39,6 @@ update();
 //Main game loop
 function update(){
      if(googleAPILoaded){
-        console.log("About to load");
         if (!leaderboardDataLoading){
             if (!leaderboardDataLoaded){
                 loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
