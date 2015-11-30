@@ -1,16 +1,9 @@
-'use strict'
-
-function leaderboardController(ID){
-    this.id = ID;
-    this.score = new Array;
-    this.names = new Array();
-    this.numOfScores = 0;
-    this.loadLeaderboard(ID);
+function leaderboardController(){
 }
 
-leaderboardController.prototype.submitScore = function(score){
+leaderboardController.prototype.submitScore = function(id,score){
      var request = gapi.client.games.scores.submit(
-        {leaderboardId: this.id,
+        {leaderboardId: id,
          timeSpan : "ALL_TIME",
         score: score}
     );
@@ -24,15 +17,14 @@ leaderboardController.prototype.submitScore = function(score){
     });
 }
 
-leaderboardController.prototype.loadLeaderboard = function(){
-     var json={};
-    json.leaderboardId=this.id;
+leaderboardController.prototype.loadLeaderboard = function(id){
+    var json={};
+    json.leaderboardId=id;
     json.collection='PUBLIC';
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-            console.log("1");
+
         }
     );
-    console.log("2");
 }
