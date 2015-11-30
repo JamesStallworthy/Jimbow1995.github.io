@@ -2,7 +2,7 @@ function createGame(){
     var request = gapi.client.games.turnBasedMatches.create({
         "kind" : "games#turnBasedMatchCreateRequest",
         "variant": 0,
-        "invitedPlayerIds" : [],
+        "invitedPlayerIds" : ["107373363902631863467"],
         "autoMatchingCriteria" :
         {
             "kind" : "games#turnBasedAutoMatchingCriteria",
