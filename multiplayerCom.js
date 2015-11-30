@@ -16,7 +16,7 @@ function createGame(){
     {
         console.log("Game created");
         console.log(response);
-        setTimeout(initGame(),1000);
+        setTimeout(initGame(),10000);
     }); 
 }
 
