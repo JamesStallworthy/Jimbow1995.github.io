@@ -125,6 +125,7 @@ function getData(){
             if (response.userMatchStatus != "USER_AWAITING_TURN"){
                 gamestate == "takeTurn";
             }
+            console.log("gamestate after getData: ", gamestate);
             console.log(atob(response.data.data));
         });
     });
