@@ -2,7 +2,7 @@ function leaderboardController(ID){
     this.id = ID;
     this.score = [];
     this.names = new Array(10);
-    this.numOfScores;
+    this.numOfScores = 0;
     this.loadLeaderboard(ID);
 }
 
