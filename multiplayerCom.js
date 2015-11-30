@@ -122,7 +122,7 @@ function getData(){
         
         newRequest.execute(function(response){
             console.log("Match data: ", response.userMatchStatus);
-            if (response.userMatchStatus != "USER_AWAITING_TURN"){
+            if (response.userMatchStatus == "USER_TURN"){
                 gamestate == "takeTurn";
             }
             console.log("gamestate after getData: ", gamestate);
