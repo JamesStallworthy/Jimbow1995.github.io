@@ -32,6 +32,7 @@ leaderboardController.prototype.loadLeaderboard = function(){
         this.numOfScores = response.items.length;
         for (var i = 0; i < response.items.length; i++){
             this.score[0] = response.items[0].formattedScore;
+            
         }
         console.log('score', this.score);
         
