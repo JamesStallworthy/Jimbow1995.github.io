@@ -15,7 +15,6 @@ function createGame(){
     {
         console.log(response);
     }); 
-    }
 }
 
 function activeGames(){
