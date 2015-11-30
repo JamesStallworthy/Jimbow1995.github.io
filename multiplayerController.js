@@ -16,6 +16,7 @@ function multiplayerController(){
         createGame();
     }
     else if (gamestate == "takeTurn"){
+        console.log(Grid.grid);
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         Arrow.drawArrow();
@@ -30,6 +31,9 @@ function multiplayerController(){
 
 function setGameState(gstate){
     gamestate = gstate;
+}
+function setInviteID(data){
+    inviteID = data;
 }
 
 function multiplayerPlaceCounter(col){
