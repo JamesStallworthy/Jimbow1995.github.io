@@ -1,7 +1,7 @@
-function leaderboardController(id){
-    this.id = id;
+function leaderboardController(ID){
+    this.id = ID;
     this.data;
-    this.loadLeaderboard(id);
+    this.loadLeaderboard(ID);
 }
 
 leaderboardController.prototype.submitScore = function(score){
@@ -15,7 +15,8 @@ leaderboardController.prototype.loadLeaderboard = function(id){
     json.timeSpan='ALL_TIME';
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) {
-        console.log('Leaderboard data for', this.id , response);
+        console.log(this.id)
+        console.log('Leaderboard data for' , response);
         this.data = response;
         console.log(this.data);
     });
