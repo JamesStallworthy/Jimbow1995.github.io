@@ -1,6 +1,6 @@
 function leaderboardController(ID){
     this.id = ID;
-    this.data;
+    this.data = new Array();
     this.numOfScores;
     this.loadLeaderboard(ID);
 }
