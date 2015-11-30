@@ -16,7 +16,7 @@ function createGame(){
     {
         console.log("Game created");
         console.log(response);
-        initGame();
+        setTimeout(initGame(),1000);
     }); 
 }
 
@@ -57,6 +57,7 @@ function initGame(){
            "matchVersion": 1,
        });
         newRequest.execute(function(response){
+            console.log("game inited");
             gamestate = "takeTurn";
             console.log(response);
         });
