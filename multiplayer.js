@@ -101,3 +101,18 @@ function joinGame(){
         });
     });
 }
+
+function getData(){
+    var request = gapi.client.games.turnBasedMatches.list();
+    request.execute(function(response){
+        var newRequest = gapi.client.games.turnBasedMatches.get(
+            {
+                "matchId" : response.items[0].matchId,
+                "includeMatchData" : true
+            });
+        
+        newRequest.execute(function(response){
+            console.log("Game joined");
+        });
+    });
+}
