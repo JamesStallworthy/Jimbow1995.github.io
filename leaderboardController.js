@@ -1,7 +1,7 @@
 function leaderboardController(ID){
     this.id = ID;
-    this.score = new Array();
-    this.names = new Array();
+    this.score = new Array(10);
+    this.names = new Array(10);
     this.numOfScores;
     this.loadLeaderboard(ID);
 }
@@ -31,8 +31,7 @@ leaderboardController.prototype.loadLeaderboard = function(){
     request.execute(function(response) {
         this.numOfScores = response.items.length;
         for (var i = 0; i < response.items.length; i++){
-            this.score.push(response.items[i].formattedScore);
-            
+            this.score[0] = response.items[0].formattedScore;
         }
         console.log('score', this.score);
         
