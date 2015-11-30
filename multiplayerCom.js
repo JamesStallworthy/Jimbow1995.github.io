@@ -111,7 +111,7 @@ function joinGame(){
 }
 
 function getData(){
-    gamestate = "processing";
+    gamestate == "processing";
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function(response){
         var newRequest = gapi.client.games.turnBasedMatches.get(
