@@ -62,7 +62,7 @@ function cancelGame(){
 function takeTurn(dataToSend){
     gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.takeTurn(
-        {"matchId" : matchID},
+        {"matchId" : matchID.toString()},
         {
             "kind": "games#turnBasedMatchTurn",
             "data":
