@@ -13,7 +13,7 @@ function createGame(){
         console.log("Game created");
         console.log(response);
         matchID = response.matchId;
-        setTimeout(function(){initGame();},1000);
+        //setTimeout(function(){initGame();},1000);
     }); 
 }
 
