@@ -10,7 +10,7 @@ function createGame(){
     });
     request.execute(function(response)
     {
-        matchVersion = 2;
+        matchVersion = 1;
         console.log("Game created");
         console.log(response);
         matchID = response.matchId;
