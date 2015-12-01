@@ -10,10 +10,11 @@ function createGame(){
     });
     request.execute(function(response)
     {
-        matchVersion = 1;
         console.log("Game created");
         console.log(response);
+        matchVersion = 1;
         matchID = response.matchId;
+        gamestate = "takeTurn";
         //setTimeout(function(){initGame();},1000);
     }); 
 }
