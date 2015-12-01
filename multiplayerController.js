@@ -10,6 +10,7 @@
 var inviteID = "107373363902631863467"
 //Stores the matches ID
 var matchID;
+var matchVersion;
 
 //Either "p_1" or "p_2" depending on who is player 1 or two.
 var player;

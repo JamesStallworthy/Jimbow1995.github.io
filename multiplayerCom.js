@@ -31,6 +31,7 @@ function initGame(){
         "matchVersion": 1,
     });
     request.execute(function(response){
+        matchVersion = 1;
         console.log("game inited");
         gamestate = "takeTurn";
         console.log(response);
@@ -71,7 +72,7 @@ function takeTurn(dataToSend){
                 "data": btoa(dataToSend)
             },
             "pendingParticipantId": participant,
-            "matchVersion": matchID,
+            "matchVersion": matchVersion,
         });
     request.execute(function(response){
         console.log("turn taken");
@@ -110,6 +111,7 @@ function getData(){
         newRequest.execute(function(response){
             console.log("Match data: ", response.userMatchStatus);
             if (response.userMatchStatus == "USER_TURN"){
+                matchVersion = response.matchVersion;
                 console.log("User took there turn");
                 gamestate = "takeTurn";
                 console.log(Grid.grid);
