@@ -12,7 +12,7 @@ function createGame(){
     {
         console.log("Game created");
         console.log(response);
-        matchID = response.matchId + 1;
+        matchID = response.matchId;
         setTimeout(function(){initGame();},1000);
     }); 
 }
@@ -31,7 +31,7 @@ function initGame(){
         "matchVersion": 1,
     });
     request.execute(function(response){
-        matchVersion = 1;
+        matchVersion = 2;
         console.log("game inited");
         gamestate = "takeTurn";
         console.log(response);
