@@ -12,7 +12,7 @@ function createGame(){
     {
         console.log("Game created");
         console.log(response);
-        setTimeout(function(){initGame();},1000);
+        //setTimeout(function(){initGame();},1000);
     }); 
 }
 
@@ -56,6 +56,7 @@ function initGame(){
         newRequest.execute(function(response){
             console.log("game inited");
             gamestate = "takeTurn";
+            resp
             console.log(response);
         });
     });
