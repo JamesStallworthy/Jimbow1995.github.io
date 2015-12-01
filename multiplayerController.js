@@ -5,8 +5,15 @@
 //waiting
 //recived
 //taketurn
+
+//Id of player to invite on creating of game
 var inviteID = "107373363902631863467"
+//Stores the matches ID
 var matchID;
+
+//Either "p_1" or "p_2" depending on who is player 1 or two.
+var player;
+var participant;
 
 function multiplayerController(){
     if (gamestate == "setInvite"){

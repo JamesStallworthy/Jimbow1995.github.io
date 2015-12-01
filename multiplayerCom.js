@@ -1,12 +1,10 @@
-//"autoMatchingCriteria" :
-//        {
-//            "kind" : "games#turnBasedAutoMatchingCriteria",
-//            "minAutoMatchingPlayers" : 1,
-//            "maxAutoMatchingPlayers" : 2,
-//        },
-
 function createGame(){
     gamestate = "processing";
+    
+    //If you create game you are player 1
+    player = "p_1";
+    participant = "p_2";
+    
     var request = gapi.client.games.turnBasedMatches.create({
         "kind" : "games#turnBasedMatchCreateRequest",
         "variant": 0,
@@ -65,37 +63,30 @@ function cancelGame(){
 
 function takeTurn(dataToSend){
     gamestate = "processing";
-    var request = gapi.client.games.turnBasedMatches.list();
+    var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
+        {"matchId" : response.items[0].matchId},
+        {
+            "kind": "games#turnBasedMatchTurn",
+            "data":
+            {
+                "kind": "games#turnBasedMatchDataRequest",
+                "data": btoa(dataToSend)
+            },
+            "pendingParticipantId": participant,
+            "matchVersion": response.items[0].matchVersion,
+    });
     
-    request.execute(function(response){
-        
-        var nextPlayer = "p_2";
-
-        if (response.items[0].pendingParticipantId == "p_2"){
-            nextPlayer = "p_1";
-        }
-        
-        var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
-           {"matchId" : response.items[0].matchId},
-           {
-               "kind": "games#turnBasedMatchTurn",
-               "data":
-               {
-                    "kind": "games#turnBasedMatchDataRequest",
-                    "data": btoa(dataToSend)
-               },
-               "pendingParticipantId": nextPlayer,
-               "matchVersion": response.items[0].matchVersion,
-           });
-            newRequest.execute(function(response){
-                console.log("turn taken");
-                gamestate = "waiting"
-                console.log(response);
-        });
+    newRequest.execute(function(response){
+        console.log("You have taken your turn");
+        gamestate = "waiting"
+        console.log(response);
     });
 }
 
 function joinGame(){
+    player = "p_2";
+    participant = "p_1";
+    
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function(response){
         var newRequest = gapi.client.games.turnBasedMatches.join(
@@ -105,6 +96,7 @@ function joinGame(){
         
         newRequest.execute(function(response){
             console.log("Game joined");
+            getData();
         });
     });
 }
