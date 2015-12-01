@@ -1,19 +1,46 @@
+//"autoMatchingCriteria" :
+//        {
+//            "kind" : "games#turnBasedAutoMatchingCriteria",
+//            "minAutoMatchingPlayers" : 1,
+//            "maxAutoMatchingPlayers" : 2,
+//        },
+
 function createGame(){
     gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.create({
         "kind" : "games#turnBasedMatchCreateRequest",
         "variant": 0,
         "invitedPlayerIds" : [inviteID],
-        
         "requestID" : Math.floor(Math.random * 1000000000000)
     });
+    
     request.execute(function(response)
     {
-        console.log("Game created");
-        console.log(response);
         matchID = response.matchId; 
+        //Wait 1 second for game to create before init
         setTimeout(function(){initGame();},1000);
     }); 
+}
+
+function initGame(){
+    var request = gapi.client.games.turnBasedMatches.takeTurn(
+       {"matchId" : matchID},
+       {
+           "kind": "games#turnBasedMatchTurn",
+           "data":
+           {
+                "kind": "games#turnBasedMatchDataRequest",
+                "data": btoa("initData")
+           },
+           "pendingParticipantId": "p_1",
+           "matchVersion": 1,
+       });
+    
+    request.execute(function(response){
+        console.log("Game created and initialized");
+        gamestate = "takeTurn";
+        console.log(response);
+    });
 }
 
 function activeGames(){
@@ -34,26 +61,7 @@ function cancelGame(){
     });
 }
 
-function initGame(){
-    var request = gapi.client.games.turnBasedMatches.takeTurn(
-       {"matchId" : matchID},
-       {
-           "kind": "games#turnBasedMatchTurn",
-           "data":
-           {
-                "kind": "games#turnBasedMatchDataRequest",
-                "data": btoa("111")
-           },
-           "pendingParticipantId": "p_1",
-           "matchVersion": 1,
-       });
-    
-    request.execute(function(response){
-        console.log("game initialized");
-        gamestate = "takeTurn";
-        console.log(response);
-    });
-}
+
 
 function takeTurn(dataToSend){
     gamestate = "processing";
