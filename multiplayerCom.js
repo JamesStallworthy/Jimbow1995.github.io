@@ -1,49 +1,48 @@
 
 /** Creates a game and invite the ID stored in inviteID */
-function createGame(){
+function createGame() {
     player = "p_1";
     participant = "p_2";
     gamestate = "processing";
-    
+
     var request = gapi.client.games.turnBasedMatches.create({
-        "kind" : "games#turnBasedMatchCreateRequest",
-        "invitedPlayerIds" : [inviteID],
-        "requestID" : Math.floor(Math.random * 1000000000000)
+        "kind": "games#turnBasedMatchCreateRequest",
+        "invitedPlayerIds": [inviteID],
+        "requestID": Math.floor(Math.random * 1000000000000)
     });
-    
-    request.execute(function(response)
-    {
+
+    request.execute(function (response) {
         console.log("Game created");
         console.log(response);
         matchVersion = 1;
         matchID = response.matchId;
         gamestate = "takeTurn";
         //setTimeout(function(){initGame();},1000);
-    }); 
+    });
 }
 
 
-function joinGame(){
+function joinGame() {
     player = "p_2";
     participant = "p_1";
     var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
+    request.execute(function (response) {
         matchID = response.items[0].matchId;
         var newRequest = gapi.client.games.turnBasedMatches.join(
             {
-                "matchId" : response.items[0].matchId
+                "matchId": response.items[0].matchId
             });
-        
-        newRequest.execute(function(response){
+
+        newRequest.execute(function (response) {
             console.log("Game joined");
         });
     });
 }
 
-function takeTurn(dataToSend){
+function takeTurn(dataToSend) {
     gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.takeTurn(
-        {"matchId" : matchID},
+        { "matchId": matchID },
         {
             "kind": "games#turnBasedMatchTurn",
             "data":
@@ -54,7 +53,7 @@ function takeTurn(dataToSend){
             "pendingParticipantId": participant,
             "matchVersion": matchVersion,
         });
-    request.execute(function(response){
+    request.execute(function (response) {
         console.log("turn taken");
         gamestate = "waiting"
         console.log(response);
@@ -62,17 +61,17 @@ function takeTurn(dataToSend){
 }
 
 
-function getData(){
+function getData() {
     gamestate == "processing";
     var request = gapi.client.games.turnBasedMatches.get(
         {
-            "matchId" : matchID,
-            "includeMatchData" : true
+            "matchId": matchID,
+            "includeMatchData": true
         });
-        
-    request.execute(function(response){
+
+    request.execute(function (response) {
         console.log("Match data: ", response.userMatchStatus);
-        if (response.userMatchStatus == "USER_TURN"){
+        if (response.userMatchStatus == "USER_TURN") {
             console.log("User took there turn");
             matchVersion = response.matchVersion;
             gamestate = "takeTurn";
@@ -82,22 +81,22 @@ function getData(){
 }
 
 
-function activeGames(){
+function activeGames() {
     var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
+    request.execute(function (response) {
         console.log(response);
     });
 }
 
-function cancelGame(){
+function cancelGame() {
     var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
+    request.execute(function (response) {
         var newRequest = gapi.client.games.turnBasedMatches.cancel(
             {
-                "matchId" : response.items[0].matchId
+                "matchId": response.items[0].matchId
             });
-        
-        newRequest.execute(function(response){
+
+        newRequest.execute(function (response) {
             console.log(response);
             console.log("Game cancelled");
         });

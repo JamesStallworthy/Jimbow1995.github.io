@@ -1,9 +1,8 @@
 //setInvite
 //create
-//init
 //taketurn
 //waiting
-//recived
+//joingame
 //taketurn
 
 //Id of player to invite on creating of game
@@ -12,39 +11,44 @@ var inviteID = "107373363902631863467"
 var matchID;
 var matchVersion;
 
+//If true waiting to check the game data
+var checkTurnWait = false;
+
 //Either "p_1" or "p_2" depending on who is player 1 or two.
 var player;
 var participant;
 
 function multiplayerController(){
-    if (gamestate == "setInvite"){
-    
-    }
-    else if (gamestate == "create"){
-        console.log("create game");
+    if (gamestate == "create"){
         createGame();
     }
     else if (gamestate == "takeTurn"){
-        
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         Arrow.drawArrow();
         Arrow.placeCounter();
-        console.log("Take your turn");
     }
     else if (gamestate == "waiting"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
-        console.log("waiting");
-        //getData();
+        checkTurn();
     }
 }
 
-function setGameState(gstate){
-    gamestate = gstate;
-}
 function setInviteID(data){
     inviteID = data;
+}
+
+function checkTurn(){
+    if(!checkTurnWait){
+        checkTurnWait = true;
+        setTimeout(function(){
+            console.log("Checking after 10seconds");
+            checkTurnWait = false;
+            getData(); 
+        },10000);
+    }
+    
 }
 
 function multiplayerPlaceCounter(col){
