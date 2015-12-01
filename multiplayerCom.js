@@ -10,6 +10,7 @@ function createGame(){
     });
     request.execute(function(response)
     {
+        matchVersion = 2;
         console.log("Game created");
         console.log(response);
         matchID = response.matchId;
@@ -31,7 +32,6 @@ function initGame(){
         "matchVersion": 1,
     });
     request.execute(function(response){
-        matchVersion = 2;
         console.log("game inited");
         gamestate = "takeTurn";
         console.log(response);
