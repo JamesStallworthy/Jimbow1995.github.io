@@ -67,7 +67,22 @@ function initGame(){
 
 function takeTurn(dataToSend){
     gamestate = "processing";
+<<<<<<< HEAD
     var request = gapi.client.games.turnBasedMatches.list();
+=======
+    var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
+        {"matchId" : response.items[0].matchId},
+        {
+            "kind": "games#turnBasedMatchTurn",
+            "data":
+            {
+                "kind": "games#turnBasedMatchDataRequest",
+                "data": btoa(dataToSend)
+            },
+            "pendingParticipantId": participant,
+            "matchVersion": response.items[0].matchVersion,
+    });
+>>>>>>> parent of 95e6481... Commit
     
     request.execute(function(response){
         
