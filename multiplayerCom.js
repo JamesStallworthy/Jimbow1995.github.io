@@ -100,25 +100,19 @@ function joinGame(){
 
 function getData(){
     gamestate == "processing";
-    var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
-        var newRequest = gapi.client.games.turnBasedMatches.get(
-            {
-                "matchId" : response.items[0].matchId,
-                "includeMatchData" : true
-            });
-        
-        newRequest.execute(function(response){
-            console.log("Match data: ", response.userMatchStatus);
-            if (response.userMatchStatus == "USER_TURN"){
-                matchVersion = response.matchVersion;
-                console.log("User took there turn");
-                gamestate = "takeTurn";
-                console.log(Grid.grid);
-                multiplayerPlaceCounter(atob(response.data.data));
-            }
-            console.log("gamestate after getData: ", gamestate);
-            console.log(atob(response.data.data));
+    var request = gapi.client.games.turnBasedMatches.get(
+        {
+            "matchId" : matchID,
+            "includeMatchData" : true
         });
+        
+    request.execute(function(response){
+        console.log("Match data: ", response.userMatchStatus);
+        if (response.userMatchStatus == "USER_TURN"){
+            console.log("User took there turn");
+            matchVersion = response.matchVersion;
+            gamestate = "takeTurn";
+            multiplayerPlaceCounter(atob(response.data.data));
+        }
     });
 }
