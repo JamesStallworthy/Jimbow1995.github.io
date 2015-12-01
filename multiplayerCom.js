@@ -40,7 +40,7 @@ function cancelGame(){
 }
 
 function initGame(){
-    var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
+    var request = gapi.client.games.turnBasedMatches.takeTurn(
        {"matchId" : matchID},
        {
            "kind": "games#turnBasedMatchTurn",
