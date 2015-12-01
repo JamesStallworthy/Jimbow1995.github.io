@@ -6,6 +6,7 @@
 //recived
 //taketurn
 var inviteID = "107373363902631863467"
+var matchID;
 
 function multiplayerController(){
     if (gamestate == "setInvite"){

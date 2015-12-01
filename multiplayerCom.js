@@ -16,6 +16,7 @@ function createGame(){
     {
         console.log("Game created");
         console.log(response);
+        matchID = response.matchId; 
         setTimeout(function(){initGame();},1000);
     }); 
 }
@@ -28,24 +29,19 @@ function activeGames(){
 }
 
 function cancelGame(){
-    var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
-        var newRequest = gapi.client.games.turnBasedMatches.cancel(
-            {
-                "matchId" : response.items[0].matchId
-            });
+    var request = gapi.client.games.turnBasedMatches.cancel(
+    {
+        "matchId" : matchID
+    });
         
-        newRequest.execute(function(response){
-            console.log("Game cancelled");
-        });
+    request.execute(function(response){
+        console.log("Game cancelled");
     });
 }
 
 function initGame(){
-    var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function(response){
-       var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
-       {"matchId" : response.items[0].matchId},
+    var newRequest = gapi.client.games.turnBasedMatches.takeTurn(
+       {"matchId" : matchID},
        {
            "kind": "games#turnBasedMatchTurn",
            "data":
@@ -56,11 +52,11 @@ function initGame(){
            "pendingParticipantId": "p_1",
            "matchVersion": 1,
        });
-        newRequest.execute(function(response){
-            console.log("game inited");
-            gamestate = "takeTurn";
-            console.log(response);
-        });
+    
+    request.execute(function(response){
+        console.log("game initialized");
+        gamestate = "takeTurn";
+        console.log(response);
     });
 }
 
@@ -125,11 +121,9 @@ function getData(){
             if (response.userMatchStatus == "USER_TURN"){
                 console.log("User took there turn");
                 gamestate = "takeTurn";
-                console.log(Grid.grid);
                 multiplayerPlaceCounter(atob(response.data.data));
             }
             console.log("gamestate after getData: ", gamestate);
-            console.log(atob(response.data.data));
         });
     });
 }
