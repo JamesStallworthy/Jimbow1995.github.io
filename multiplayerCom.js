@@ -4,12 +4,7 @@ function createGame(){
         "kind" : "games#turnBasedMatchCreateRequest",
         "variant": 0,
         "invitedPlayerIds" : [inviteID],
-        "autoMatchingCriteria" :
-        {
-            "kind" : "games#turnBasedAutoMatchingCriteria",
-            "minAutoMatchingPlayers" : 1,
-            "maxAutoMatchingPlayers" : 2,
-        },
+        
         "requestID" : Math.floor(Math.random * 1000000000000)
     });
     request.execute(function(response)
