@@ -17,8 +17,6 @@ leaderBoard.prototype.drawImgBoard = function () {
 }
 
 leaderBoard.prototype.clicked = function(x,y) {
-    if (x >= 530 && x <= 635 && y >= 432 && y <= 476){
     console.log("Gamestate is menu");
     gamestate="menu";
-}
 }

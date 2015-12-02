@@ -71,7 +71,7 @@ function update(){
         //Player 2 win screen
     }
     
-    if(gamestate == "leaderBoard"){
+    if(gamestate == "leaderboard"){
         leaderBoard.drawImgBoard();
         //LeaderBoard screen
     }
