@@ -105,7 +105,7 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }
-                else if(xpos >= 281*ratioWidth && xpos <=355*ratioWidth){
+                else if(xpos >= 281*ratioWidht && xpos <=355*ratioWidht){
                     this.arrowData.x = 302;
                     this.pickerPlace =3;
                     this.Turn++;
