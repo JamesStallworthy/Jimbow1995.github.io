@@ -46,8 +46,8 @@ menu.prototype.clicked = function(x,y){
     gamestate="single";
   }
   else if(x>=367*ratioWidht && x<=576*ratioWidht && y>=208*ratioHeight && y<=320*ratioHeight){
-    console.log("Gamestate is multiplayer");
-    gamestate="multi";
+    console.log("Gamestate is createJoin");
+    gamestate="createJoin";
   }
   else if(x>=214*ratioWidht && x<=426*ratioWidht && y>=316*ratioHeight && y<=454*ratioHeight){
     gamestate="quit";
