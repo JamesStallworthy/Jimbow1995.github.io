@@ -39,24 +39,26 @@ function joinGame() {
 }
 
 function takeTurn(dataToSend) {
-    gamestate = "processing";
-    var request = gapi.client.games.turnBasedMatches.takeTurn(
-        { "matchId": matchID },
-        {
-            "kind": "games#turnBasedMatchTurn",
-            "data":
+    if (gamestate == "takeTurn"){
+        gamestate = "processing";
+        var request = gapi.client.games.turnBasedMatches.takeTurn(
+            { "matchId": matchID },
             {
-                "kind": "games#turnBasedMatchDataRequest",
-                "data": btoa(dataToSend)
-            },
-            "pendingParticipantId": participant,
-            "matchVersion": matchVersion,
+                "kind": "games#turnBasedMatchTurn",
+                "data":
+                {
+                    "kind": "games#turnBasedMatchDataRequest",
+                    "data": btoa(dataToSend)
+                },
+                "pendingParticipantId": participant,
+                "matchVersion": matchVersion,
+            });
+        request.execute(function (response) {
+            console.log("turn taken");
+            gamestate = "waiting"
+            console.log(response);
         });
-    request.execute(function (response) {
-        console.log("turn taken");
-        gamestate = "waiting"
-        console.log(response);
-    });
+    }
 }
 
 
