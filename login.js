@@ -15,12 +15,13 @@ function load(){
     gapi.client.load('games','v1',function(response) {
         // Ready to make calls!
         if(response == null){
-            console.log("Google API loaded");
+            console.log("Games API loaded");
             googleAPILoaded = true;
        
         }
       });
       gapi.client.load('plus','v1',function(response) {
-          
+          console.log(response);
+          console.log("Plus API loaded")
       });
 }
