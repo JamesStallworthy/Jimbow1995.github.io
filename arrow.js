@@ -81,10 +81,17 @@ arrow.prototype.moveArrow = function(){
 
 arrow.prototype.moveArrowMouse = function(xpos,ypos){
                 if(xpos >= 65 && xpos <= 135){
-                    this.arrowData.x = 74;  
-                    this.pickerPlace = 0;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    if (gamestate == "takeTurn"){
+                        this.arrowData.x = 74;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        takeTurn(Arrow.pickerPlace);
+                    }else {
+                        this.arrowData.x = 74;  
+                        this.pickerPlace = 0;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    }
                 }
                 else if(xpos >= 136 && xpos <=207){
                     this.arrowData.x = 154;
