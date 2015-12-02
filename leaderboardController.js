@@ -16,8 +16,6 @@ function submitScore(id, score){
 
 function loadLeaderboard(id,timeSpan,collection){
     console.log("loading leaderboard: ", id);
-    leaderboardDataLoaded = false;
-    leaderboardDataLoading = true;
     var json={};
     json.leaderboardId=id;
     json.collection=collection;
@@ -26,8 +24,6 @@ function loadLeaderboard(id,timeSpan,collection){
     request.execute(function(response) { 
             console.log("Leaderboard loaded, Data: ", response.items);
             leaderboardData = response.items;
-            leaderboardDataLoaded = true;
-            leaderboardDataLoading = false;
         }
     );
 }
