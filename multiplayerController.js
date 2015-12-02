@@ -19,8 +19,8 @@ var player;
 var participant;
 
 function multiplayerController(){
-    if (gamestate == "create"){
-        createGame();
+    if (gamestate == "createJoin"){
+        MultiMenu.drawCreateJoin();
     }
     else if (gamestate == "takeTurn"){
         Grid.drawGrid();

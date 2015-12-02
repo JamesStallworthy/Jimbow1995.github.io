@@ -31,6 +31,7 @@ var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
 var Leaderboard = new leaderBoard();
+var MultiMenu = new multiplayerMenu();
 
 //determines what state the user is in
 var gamestate="menu";

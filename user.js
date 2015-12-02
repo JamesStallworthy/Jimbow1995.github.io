@@ -44,4 +44,6 @@ function mouseDownHandler()
         Arrow.moveArrowMouse(mouseX,mouseY);
     else if(gamestate == "leaderboard")
         Leaderboard.clicked(mouseX,mouseY);
+    else if(gamestate == "leaderboard")
+        MultiMenu.clicked(mouseX,mouseY);
 }

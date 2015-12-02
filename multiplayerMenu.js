@@ -10,18 +10,21 @@ multiplayerMenu.prototype.loadImg = function() {
     this.boardImg.src = "";
 }
 
-multiplayerMenu.prototype.drawImgBoard = function () {
-    //ctx.drawImage(this.boardImg, 0, 0);
+multiplayerMenu.prototype.drawCreateJoin = function () {
+
+}
+
+multiplayerMenu.prototype.drawInviteList = function(){
     ctx.font = 'bold 10pt Calibri';
-    for(var i=0; i<leaderboardData.length; i++)
+    for(var i=0; i<usersFriends.length; i++)
     {
-        ctx.fillText(leaderboardData[i].formattedScoreRank, 60, 80+(i*20));
-        ctx.fillText(leaderboardData[i].formattedScore, 80, 80+(i*20));
-        ctx.fillText(leaderboardData[i].player.name.givenName, 100, 80+(i*20));
+        ctx.fillText(usersFriends[i].displayName, 60, 80+(i*20));
     }
 }
 
 multiplayerMenu.prototype.clicked = function(x,y) {
-    console.log("Gamestate is menu");
-    gamestate="menu";
+    if (x > 320*ratioWidht){
+        console.log("gamestate is now invite");
+        gamestate = "invite";
+    }
 }
