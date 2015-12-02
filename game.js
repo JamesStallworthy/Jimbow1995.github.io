@@ -72,7 +72,7 @@ function update(){
     }
     
     if(gamestate == "leaderboard"){
-        leaderBoard.drawImgBoard();
+        LeaderBoard.drawImgBoard();
         //LeaderBoard screen
     }
     
