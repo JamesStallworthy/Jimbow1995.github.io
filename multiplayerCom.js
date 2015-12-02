@@ -71,9 +71,9 @@ function getData() {
     request.execute(function (response) {
         console.log("Match status: ", response.userMatchStatus);
         if (response.userMatchStatus == "USER_TURN") {
+            gamestate = "takeTurn";
             console.log("User took there turn");
             matchVersion = response.matchVersion;
-            gamestate = "takeTurn";
             multiplayerPlaceCounter(atob(response.data.data));
         }
     });
