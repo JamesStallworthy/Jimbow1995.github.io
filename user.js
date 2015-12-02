@@ -36,12 +36,12 @@ function mouseDownHandler()
     mouseY=event.pageY-canvas.offsetTop;
     if(gamestate == "menu")
       Menu.clicked(mouseX, mouseY);
-    if(gamestate == "winner" || gamestate=="winnerPlayer1" || gamestate=="winnerPlayer2")
+    else if(gamestate == "winner" || gamestate=="winnerPlayer1" || gamestate=="winnerPlayer2")
       WinS.clicked(mouseX, mouseY);
-    if(gamestate == "loser")
+    else if(gamestate == "loser")
       LoseS.clicked(mouseX, mouseY);
-    if(gamestate == "single")    
+    else if(gamestate == "single")    
         Arrow.moveArrowMouse(mouseX,mouseY);
-    if(gamestate == "leaderboard")
+    else if(gamestate == "leaderboard")
         Leaderboard.clicked(mouseX,mouseY);
 }
