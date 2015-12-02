@@ -44,7 +44,7 @@ multiplayerMenu.prototype.clickedInvite = function(x,y) {
     this.selected = pos;
     if (x > 320*ratioWidht){
         console.log(usersFriends);
-        console.log(usersFriends[0].id);
+        console.log(usersFriends[4].id);
     }
     console.log(pos);
 }
