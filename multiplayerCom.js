@@ -17,7 +17,6 @@ function createGame() {
         matchVersion = 1;
         matchID = response.matchId;
         gamestate = "takeTurn";
-        //setTimeout(function(){initGame();},1000);
     });
 }
 
@@ -70,7 +69,7 @@ function getData() {
         });
 
     request.execute(function (response) {
-        console.log("Match data: ", response.userMatchStatus);
+        console.log("Match status: ", response.userMatchStatus);
         if (response.userMatchStatus == "USER_TURN") {
             console.log("User took there turn");
             matchVersion = response.matchVersion;

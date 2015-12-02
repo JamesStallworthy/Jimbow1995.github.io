@@ -45,7 +45,9 @@ function checkTurn(){
         setTimeout(function(){
             console.log("Checking after 10seconds");
             checkTurnWait = false;
-            getData(); 
+            if (gamestate == "waiting"){
+                getData(); 
+            }
         },10000);
     }
     
