@@ -44,13 +44,7 @@ update();
 
 /** The update function controls the main game loop */
 function update(){
-    if(googleAPILoaded){
-        if (!leaderboardDataLoading){
-            if (!leaderboardDataLoaded){
-                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','ALL_TIME','PUBLIC');
-            }
-        }
-    }
+
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){
