@@ -30,7 +30,7 @@ var Arrow = new arrow();
 var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
-var LeaderBoard = new leaderBoard();
+var Leaderboard = new leaderBoard();
 
 //determines what state the user is in
 var gamestate="menu";
