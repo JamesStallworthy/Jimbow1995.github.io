@@ -23,8 +23,11 @@ multiplayerMenu.prototype.drawInviteList = function(){
 }
 
 multiplayerMenu.prototype.clicked = function(x,y) {
-    if (x > 320*ratioWidht){
+    if (x < 320*ratioWidht){
         console.log("gamestate is now invite");
         gamestate = "invite";
+    }
+    else{
+        joinGame();
     }
 }

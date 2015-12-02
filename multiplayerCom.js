@@ -34,6 +34,7 @@ function joinGame() {
 
         newRequest.execute(function (response) {
             console.log("Game joined");
+            getData();
         });
     });
 }
