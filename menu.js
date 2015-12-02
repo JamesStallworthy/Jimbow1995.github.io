@@ -55,7 +55,7 @@ menu.prototype.clicked = function(x,y){
   else{
     gamestate="leaderboard";
     if(googleAPILoaded){
-      loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','WEEKLY','PUBLIC');
+      loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','ALL_TIME','PUBLIC');
     }
   }
 }
