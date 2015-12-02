@@ -48,7 +48,7 @@ function checkTurn(){
             if (gamestate == "waiting"){
                 getData(); 
             }
-        },2000);
+        },5000);
     }
     
 }
