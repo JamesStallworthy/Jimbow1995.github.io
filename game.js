@@ -44,7 +44,7 @@ update();
 
 /** The update function controls the main game loop */
 function update(){
-
+    console.log(gamestate);
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
     if (gamestate=="menu"){
