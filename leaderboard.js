@@ -18,9 +18,9 @@ leaderBoard.prototype.drawImgBoard = function () {
     console.log("leaderBoard entries: " + leaderboardData.length)
     for(var i=0; i<leaderboardData.length; i++)
     {
-        ctx.fillText(leaderboardData[0].formattedScoreRank, 60, 80+1*10);
-        ctx.fillText(leaderboardData[0].formattedScore, 80, 80+1*10);
-        ctx.fillText(leaderboardData[0].player.name.givenName, 100, 80+1*10)
+        ctx.fillText(leaderboardData[0].formattedScoreRank, 60, 80+(i*20_);
+        ctx.fillText(leaderboardData[0].formattedScore, 80, 80+(i*20));
+        ctx.fillText(leaderboardData[0].player.name.givenName, 100, 80+(i*20))
     }
 }
 
