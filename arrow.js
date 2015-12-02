@@ -80,7 +80,7 @@ arrow.prototype.moveArrow = function(){
 }
 
 arrow.prototype.moveArrowMouse = function(xpos,ypos){
-                if(xpos >= 65 && xpos <= 135){
+                if(xpos >= 65*ratioWidth && xpos <= 135*ratioWidht){
                     if (gamestate == "takeTurn"){
                         this.arrowData.x = 74;
                         Grid.insertCounter(Arrow.pickerPlace,1);
@@ -93,37 +93,37 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
                         Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                     }
                 }
-                else if(xpos >= 136 && xpos <=207){
+                else if(xpos >= 136*ratioWidth && xpos <=207*ratioWidth){
                     this.arrowData.x = 154;
                     this.pickerPlace = 1;
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }
-                else if(xpos >= 208 && xpos <=280){
+                else if(xpos >= 208*ratioWidth && xpos <=280*ratioWidth){
                     this.arrowData.x = 228;
                     this.pickerPlace = 2;
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }
-                else if(xpos >= 281 && xpos <=355){
+                else if(xpos >= 281*ratioWidth && xpos <=355*ratioWidth){
                     this.arrowData.x = 302;
                     this.pickerPlace =3;
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }
-                else if(xpos >= 356 && xpos <=430){
+                else if(xpos >= 356*ratioWidth && xpos <=430*ratioWidth){
                     this.arrowData.x = 376;
                     this.pickerPlace = 4;
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }
-                else if(xpos >= 431 && xpos <=505){
+                else if(xpos >= 431*ratioWidth && xpos <=505*ratioWidth){
                     this.arrowData.x = 450;
                     this.pickerPlace = 5;
                     this.Turn++;
                     Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
                }        
-                else if(xpos >= 506 && xpos <=580){
+                else if(xpos >= 506*ratioWidth && xpos <=580*ratioWidth){
                     this.arrowData.x = 524;
                     this.pickerPlace = 6;
                     this.Turn++;
