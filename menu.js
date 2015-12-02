@@ -58,5 +58,6 @@ menu.prototype.clicked = function(x,y){
     {
       loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','ALL_TIME','PUBLIC');
     }
+  }
 }
 
