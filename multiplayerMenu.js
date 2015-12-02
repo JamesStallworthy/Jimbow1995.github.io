@@ -39,12 +39,13 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 }
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
-    console.log(y);
-    var pos = Math.round((y-10) / 30);
-    this.selected = pos;
+    if (x < 320*ratioWidht){
+        var pos = Math.round((y-10) / 30);
+        this.selected = pos;
+    }
     if (x > 320*ratioWidht){
         console.log(usersFriends);
-        console.log(usersFriends[4].id);
+        console.log(usersFriends[this.selected].id);
     }
     console.log(pos);
 }
