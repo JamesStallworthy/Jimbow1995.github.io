@@ -34,6 +34,6 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
     console.log(y);
-    var pos = (y-10) / 30;
+    var pos = Math.round((y-10) / 30);
     console.log(pos);
 }
