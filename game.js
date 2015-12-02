@@ -37,6 +37,8 @@ var gamestate="menu";
 
 var googleAPILoaded = false;
 
+var usersFriends = new Array();
+
 //leaderboard vars
 var leaderboardData = new Array;
 
