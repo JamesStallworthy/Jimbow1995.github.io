@@ -17,6 +17,10 @@ function load(){
         if(response == null){
             console.log("Google API loaded");
             googleAPILoaded = true;
+       
         }
+      });
+      gapi.client.load('plus','v1',function(response) {
+          
       });
 }
