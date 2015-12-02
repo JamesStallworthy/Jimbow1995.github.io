@@ -19,7 +19,7 @@ leaderBoard.prototype.drawImgBoard = function () {
     {
         ctx.fillText(leaderboardData[i].formattedScoreRank, 60, 80+(i*20_);
         ctx.fillText(leaderboardData[i].formattedScore, 80, 80+(i*20));
-        ctx.fillText(leaderboardData[i].player.name.givenName, 100, 80+(i*20))
+        ctx.fillText(leaderboardData[i].player.name.givenName, 100, 80+(i*20));
     }
 }
 
