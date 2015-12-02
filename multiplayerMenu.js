@@ -2,6 +2,7 @@ function multiplayerMenu() {
    
     this.boardImg = new Image();
     this.loadImg();
+    this.selected;
 }
 
 multiplayerMenu.prototype.loadImg = function() {
@@ -18,6 +19,11 @@ multiplayerMenu.prototype.drawInviteList = function(){
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<usersFriends.length; i++)
     {
+       if (this.selected == i){
+           ctx.fillStyle = "#0000ff"; 
+       }else{
+           ctx.fillStyle = "#000000";
+       }
         ctx.fillText(usersFriends[i].displayName, 60, 10+(i*20));
     }
 }
@@ -35,5 +41,6 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
     console.log(y);
     var pos = Math.round((y-10) / 30);
+    this.selected = pos;
     console.log(pos);
 }
