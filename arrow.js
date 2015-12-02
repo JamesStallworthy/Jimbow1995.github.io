@@ -85,6 +85,7 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
                         this.arrowData.x = 74;
                         Grid.insertCounter(Arrow.pickerPlace,1);
                         console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 0;
                         takeTurn(Arrow.pickerPlace);
                     }else {
                         this.arrowData.x = 74;  
@@ -94,40 +95,88 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
                     }
                 }
                 else if(xpos >= 136*ratioWidht && xpos <=207*ratioWidht){
-                    this.arrowData.x = 154;
-                    this.pickerPlace = 1;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     if (gamestate == "takeTurn"){
+                        this.arrowData.x = 154;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 1;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 154;
+                        this.pickerPlace = 1;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);  
+                        }
                }
                 else if(xpos >= 208*ratioWidht && xpos <=280*ratioWidht){
-                    this.arrowData.x = 228;
-                    this.pickerPlace = 2;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    if (gamestate == "takeTurn"){
+                        this.arrowData.x = 228;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 2;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 228;
+                        this.pickerPlace = 2;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
                }
                 else if(xpos >= 281*ratioWidht && xpos <=355*ratioWidht){
-                    this.arrowData.x = 302;
-                    this.pickerPlace =3;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 302;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 3;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 302;
+                        this.pickerPlace =3;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
                }
                 else if(xpos >= 356*ratioWidht && xpos <=430*ratioWidht){
-                    this.arrowData.x = 376;
-                    this.pickerPlace = 4;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 376;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 3;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 376;
+                        this.pickerPlace = 4;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
                }
                 else if(xpos >= 431*ratioWidht && xpos <=505*ratioWidht){
-                    this.arrowData.x = 450;
-                    this.pickerPlace = 5;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     if(gamestate == "takeTurn"){
+                        this.arrowData.x = 450;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 5;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 450;
+                        this.pickerPlace = 5;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
                }        
                 else if(xpos >= 506*ratioWidht && xpos <=580*ratioWidht){
-                    this.arrowData.x = 524;
-                    this.pickerPlace = 6;
-                    this.Turn++;
-                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 524;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 6;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 524;
+                        this.pickerPlace = 6;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
                }
 }
 
