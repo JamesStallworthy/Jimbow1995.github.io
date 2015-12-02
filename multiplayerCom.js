@@ -64,6 +64,7 @@ function takeTurn(dataToSend) {
 
 
 function getData() {
+    console.log("getting data");
     gamestate == "processing";
     var request = gapi.client.games.turnBasedMatches.get(
         {
