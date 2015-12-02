@@ -18,7 +18,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<usersFriends.length; i++)
     {
-        ctx.fillText(usersFriends[i].displayName, 60, (i*20));
+        ctx.fillText(usersFriends[i].displayName, 60, 10+(i*20));
     }
 }
 
