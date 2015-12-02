@@ -1,3 +1,7 @@
+/**
+ * @fileOverview Holds the games main game loop, resize and reload scripts.
+ * @name game.js
+ */
 var canvas = document.getElementById("connect4Canvas");
 var ctx = canvas.getContext("2d");
 
@@ -8,6 +12,10 @@ var screenWidth = 640;
 var screenHeight = 480;
 
 var ratio = screenHeight/screenWidth;
+var ratioHeight =1;
+var ratioWidht = 1;
+
+resize();
 
 var currentWidth = screenWidth;
 var currentHeight = screenHeight;
@@ -22,7 +30,7 @@ var Arrow = new arrow();
 var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
-var LoseS = new loseScreen();
+var LeaderBoard = new leaderBoard();
 
 //determines what state the user is in
 var gamestate="menu";
@@ -31,19 +39,15 @@ var googleAPILoaded = false;
 
 //leaderboard vars
 var leaderboardData = new Array;
-var leaderboardDataLoading = false;
-var leaderboardDataLoaded = false;
 
 update();
 
-console.log("c = create, x = cancel, l = lists");
-
-//Main game loop
+/** The update function controls the main game loop */
 function update(){
-     if(googleAPILoaded){
+    if(googleAPILoaded){
         if (!leaderboardDataLoading){
             if (!leaderboardDataLoaded){
-                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ');
+                loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','ALL_TIME','PUBLIC');
             }
         }
     }
@@ -59,10 +63,10 @@ function update(){
         Arrow.placeCounter();
     }
     if(gamestate == "winner"){
-      WinS.drawImg();
+        WinS.drawImg();
     }
     if(gamestate == "loser"){
-      LoseS.drawImg();
+        WinS.drawImgLose();
     }
     if(gamestate == "winnerPlayer1"){
         WinS.drawImgWin1();
@@ -72,31 +76,41 @@ function update(){
         WinS.drawImgWin2();
         //Player 2 win screen
     }
-    multiplayerController();
+    
+    if(gamestate == "leaderBoard"){
+        leaderBoard.drawImgBoard();
+        //LeaderBoard screen
+    }
+    
     if(gamestate == "quit"){
       //QUIT code
     }
+
+    multiplayerController();
+	
     //Calls the update function again
     requestAnimationFrame(update);
 }
 
+/** The reset function calls reset methods so the grid and arrow position back to default **/
 function reset(){
     Grid.clearArray();
     Arrow.resetArrow();
 }
 
+/** The resize function is called upon window resize, deals with changing window size **/
 function resize(){
     ratio =  screenHeight / screenWidth;
     
     currentWidth = window.innerHeight;
     currentHeight = ratio * currentWidth;
     
+    ratioHeight = currentHeight/screenHeight;
+    ratioWidht = currentWidth/screenWidth;
+    
     canvas.style.width = currentWidth + 'px';
     canvas.style.height = currentHeight + 'px';
     
-    // we use a timeout here because some mobile
-    // browsers don't fire if there is not
-    // a short delay
     window.setTimeout(function() {window.scrollTo(0,1);}, 1);
 
 }

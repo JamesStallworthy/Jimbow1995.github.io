@@ -14,17 +14,16 @@ function submitScore(id, score){
     });
 }
 
-function loadLeaderboard(id){
+function loadLeaderboard(id,timeSpan,collection){
     console.log("loading leaderboard: ", id);
     leaderboardDataLoaded = false;
     leaderboardDataLoading = true;
     var json={};
     json.leaderboardId=id;
-    json.collection='PUBLIC';
-    json.timeSpan='ALL_TIME';
+    json.collection=collection;
+    json.timeSpan=timeSpan;
     var request = gapi.client.games.scores.listWindow(json);
     request.execute(function(response) { 
-            console.log(response);
             console.log("Leaderboard loaded, Data: ", response.items);
             leaderboardData = response.items;
             leaderboardDataLoaded = true;
