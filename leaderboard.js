@@ -15,12 +15,11 @@ leaderBoard.prototype.loadImg = function() {
 leaderBoard.prototype.drawImgBoard = function () {
     //ctx.drawImage(this.boardImg, 0, 0);
     ctx.font = 'bold 10pt Calibri';
-    console.log("leaderBoard entries: " + leaderboardData.length)
     for(var i=0; i<leaderboardData.length; i++)
     {
-        ctx.fillText(leaderboardData[0].formattedScoreRank, 60, 80+(i*20_);
-        ctx.fillText(leaderboardData[0].formattedScore, 80, 80+(i*20));
-        ctx.fillText(leaderboardData[0].player.name.givenName, 100, 80+(i*20))
+        ctx.fillText(leaderboardData[i].formattedScoreRank, 60, 80+(i*20_);
+        ctx.fillText(leaderboardData[i].formattedScore, 80, 80+(i*20));
+        ctx.fillText(leaderboardData[i].player.name.givenName, 100, 80+(i*20))
     }
 }
 
