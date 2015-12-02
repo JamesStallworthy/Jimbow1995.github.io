@@ -18,7 +18,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<usersFriends.length; i++)
     {
-        ctx.fillText(usersFriends[i].displayName, 60, 80+(i*20));
+        ctx.fillText(usersFriends[i].displayName, 60, (i*20));
     }
 }
 
@@ -34,6 +34,6 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
     console.log(y);
-    var pos = (y- 80) / 20;
+    var pos = (y) / 20;
     console.log(pos);
 }
