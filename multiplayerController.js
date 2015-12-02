@@ -32,7 +32,7 @@ function multiplayerController(){
         Arrow.drawArrow();
         Arrow.placeCounter();
     }
-    else if (gamestate == "waiting" || gamestate == "processing"){
+    else if (gamestate == "waiting"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         checkTurn();
