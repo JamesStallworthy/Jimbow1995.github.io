@@ -40,7 +40,7 @@ function mouseDownHandler()
       WinS.clicked(mouseX, mouseY);
     else if(gamestate == "loser")
       LoseS.clicked(mouseX, mouseY);
-    else if(gamestate == "single")    
+    else if(gamestate == "single" || gamestate == "takeTurn")  
         Arrow.moveArrowMouse(mouseX,mouseY);
     else if(gamestate == "leaderboard")
         Leaderboard.clicked(mouseX,mouseY);
