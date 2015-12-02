@@ -46,4 +46,6 @@ function mouseDownHandler()
         Leaderboard.clicked(mouseX,mouseY);
     else if(gamestate == "createJoin")
         MultiMenu.clicked(mouseX,mouseY);
+    else if(gamestate == "invite")
+        MultiMenu.clickedInvite(mouseX,mouseY);
 }

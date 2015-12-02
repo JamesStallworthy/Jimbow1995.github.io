@@ -31,3 +31,8 @@ multiplayerMenu.prototype.clicked = function(x,y) {
         joinGame();
     }
 }
+
+multiplayerMenu.prototype.clickedInvite = function(x,y) {
+    var pos = (y- 80) / 20;
+    console.log(pos);
+}
