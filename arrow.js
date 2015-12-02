@@ -80,7 +80,7 @@ arrow.prototype.moveArrow = function(){
 }
 
 arrow.prototype.moveArrowMouse = function(xpos,ypos){
-                if(xpos >= 65*ratioWidth && xpos <= 135*ratioWidht){
+                if(xpos >= 65*ratioWidht && xpos <= 135*ratioWidht){
                     if (gamestate == "takeTurn"){
                         this.arrowData.x = 74;
                         Grid.insertCounter(Arrow.pickerPlace,1);
