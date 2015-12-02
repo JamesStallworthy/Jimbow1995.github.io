@@ -33,6 +33,7 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 }
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
+    console.log(y);
     var pos = (y- 80) / 20;
     console.log(pos);
 }
