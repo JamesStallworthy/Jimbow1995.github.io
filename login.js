@@ -20,8 +20,10 @@ function load(){
        
         }
       });
-      gapi.client.load('plus','v1',function(response) {
-          console.log(response);
-          console.log("Plus API loaded")
+   gapi.client.load('plus','v1',function(response) {
+       console.log(response);
+       console.log("Plus API loaded");
+       var request = gapi.client.plus.people.list({"collection": "visible","userID": "me"});
+       request.execute(function(response){console.log(response)});
       });
 }
