@@ -22,6 +22,10 @@ function multiplayerController(){
     if (gamestate == "createJoin"){
         MultiMenu.drawCreateJoin();
     }
+    
+    if (gamestate == "invite"){
+        MultiMenu.drawInviteList();
+    }
     else if (gamestate == "takeTurn"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
