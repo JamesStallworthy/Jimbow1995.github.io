@@ -41,5 +41,7 @@ function mouseDownHandler()
     if(gamestate == "loser")
       LoseS.clicked(mouseX, mouseY);
     if(gamestate == "single")    
-        Arrow.moveArrowMouse(mouseX,mouseY); 
+        Arrow.moveArrowMouse(mouseX,mouseY);
+    if(gamestate == "leaderboard")
+        leaderboard.clicked(mouseX,mouseY);
 }
