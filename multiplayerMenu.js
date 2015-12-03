@@ -40,9 +40,9 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
     if (x < 320*ratioWidht){
-        var pos = Math.round((y-10) / 30);
+        var pos = Math.round((y*ratioHeight-10) / 30*ratioHeight);
         this.selected = pos;
-        console.log(usersFriends[this.selected].id);        
+        console.log(this.selected);        
     }
     if (x > 320*ratioWidht){
         console.log(this.selected);
