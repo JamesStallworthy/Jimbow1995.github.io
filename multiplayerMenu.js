@@ -42,10 +42,10 @@ multiplayerMenu.prototype.clickedInvite = function(x,y) {
     if (x < 320*ratioWidht){
         var pos = Math.round((y-10) / 30);
         this.selected = pos;
+        console.log(usersFriends[this.selected].id);        
     }
     if (x > 320*ratioWidht){
         console.log(this.selected);
-        console.log(usersFriends[this.selected].id);
         inviteID = usersFriends[this.selected].id;
         createGame();
     }
