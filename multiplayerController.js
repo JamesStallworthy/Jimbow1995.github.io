@@ -6,7 +6,8 @@
 //taketurn
 
 //Id of player to invite on creating of game
-var inviteID = "107373363902631863467"
+var inviteID = ""
+
 //Stores the matches ID
 var matchID;
 var matchVersion;
