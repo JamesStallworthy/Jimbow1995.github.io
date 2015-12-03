@@ -64,6 +64,7 @@ function takeTurn(dataToSend) {
 function getData() {
     console.log("getting data");
     gamestate == "processing";
+    recieved = false;
     var request = gapi.client.games.turnBasedMatches.get(
         {
             "matchId": matchID,
@@ -74,6 +75,7 @@ function getData() {
         console.log("Match status: ", response.userMatchStatus);
         if (response.userMatchStatus == "USER_TURN") {
             gamestate = "takeTurn";
+            recieved = true;
             console.log("User took there turn");
             matchVersion = response.matchVersion;
             multiplayerPlaceCounter(atob(response.data.data));

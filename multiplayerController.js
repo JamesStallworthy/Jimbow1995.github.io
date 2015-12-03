@@ -14,6 +14,9 @@ var matchVersion;
 //If true waiting to check the game data
 var checkTurnWait = false;
 
+//Check to see if data has been retrived before calling again
+var recieved = true;
+
 //Either "p_1" or "p_2" depending on who is player 1 or two.
 var player;
 var participant;
@@ -49,7 +52,7 @@ function checkTurn(){
         setTimeout(function(){
             console.log("Checking after 10seconds");
             checkTurnWait = false;
-            if (gamestate == "waiting"){
+            if (gamestate == "waiting" && recieved){
                 getData(); 
             }
         },5000);
