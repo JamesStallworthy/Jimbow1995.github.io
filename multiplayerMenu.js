@@ -28,7 +28,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
        }else{
            ctx.fillStyle = "#000000";
        }
-        ctx.fillText(usersFriends[i].displayName, 60, 10+(i*20));
+        ctx.fillText(usersFriends[i].displayName, 60, 20+(i*20));
     }
 }
 
@@ -44,7 +44,7 @@ multiplayerMenu.prototype.clicked = function(x,y) {
 
 multiplayerMenu.prototype.clickedInvite = function(x,y) {
     if (x < 320*ratioWidht){
-        var pos = Math.round((y-(10*ratioHeight)) / (20*ratioHeight));
+        var pos = Math.round((y-(20*ratioHeight)) / (20*ratioHeight));
         this.selected = pos;
         console.log(y);
         console.log(this.selected); 
