@@ -104,11 +104,8 @@ function resize(){
     ratioHeight = currentHeight/screenHeight;
     ratioWidht = currentWidth/screenWidth;
     
-    //canvas.style.width = currentWidth + 'px';
-    //canvas.style.height = currentHeight + 'px';
-    
-    canvas.style.width = 1280 + 'px';
-    canvas.style.height = 960 + 'px';
+    canvas.style.width = currentWidth + 'px';
+    canvas.style.height = currentHeight + 'px';
     
     console.log("Res of game is now: ", currentWidth, "x",currentHeight);
     
