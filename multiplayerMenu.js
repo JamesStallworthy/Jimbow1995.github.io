@@ -24,7 +24,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
     for(var i=0; i<usersFriends.length; i++)
     {
        if (this.selected == i){
-           ctx.fillStyle = "#0000ff"; 
+           ctx.fillStyle = "##e60000"; 
        }else{
            ctx.fillStyle = "#000000";
        }
