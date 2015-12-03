@@ -1,21 +1,25 @@
 function multiplayerMenu() {
    
-    this.boardImg = new Image();
+    this.createJoin = new Image();
+    this.Invite = new Image();
     this.loadImg();
     this.selected;
 }
 
 multiplayerMenu.prototype.loadImg = function() {
     
-    this.boardImg = new Image();
-    this.boardImg.src = "";
+    this.createJoin = new Image();
+    this.Invite = new Image();
+    this.createInvite.src = "assets/CreateJoin.png";
+    this.Invite.src = "assets/invite.png";
 }
 
 multiplayerMenu.prototype.drawCreateJoin = function () {
-
+    ctx.drawImage(this.createJoin, 0, 0);
 }
 
 multiplayerMenu.prototype.drawInviteList = function(){
+    ctx.drawImage(this.Invite, 0, 0);
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<usersFriends.length; i++)
     {
