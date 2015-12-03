@@ -10,7 +10,7 @@ multiplayerMenu.prototype.loadImg = function() {
     
     this.createJoin = new Image();
     this.Invite = new Image();
-    this.createInvite.src = "assets/CreateJoin.png";
+    this.createJoin.src = "assets/CreateJoin.png";
     this.Invite.src = "assets/invite.png";
 }
 
