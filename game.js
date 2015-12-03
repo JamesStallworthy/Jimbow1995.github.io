@@ -107,6 +107,8 @@ function resize(){
     canvas.style.width = currentWidth + 'px';
     canvas.style.height = currentHeight + 'px';
     
+    console.log("Res of game is now: ", currentWidth, "x",currentHeight);
+    
     window.setTimeout(function() {window.scrollTo(0,1);}, 1);
 
 }
