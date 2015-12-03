@@ -6,7 +6,7 @@ var canvas = document.getElementById("connect4Canvas");
 var ctx = canvas.getContext("2d");
 
 //resize 
-window.addEventListener('resize', function(){ resize();})
+//window.addEventListener('resize', function(){ resize();})
 
 var screenWidth = 640;
 var screenHeight = 480;
@@ -15,7 +15,7 @@ var ratio = screenHeight/screenWidth;
 var ratioHeight =1;
 var ratioWidht = 1;
 
-resize();
+//resize();
 
 var currentWidth = screenWidth;
 var currentHeight = screenHeight;
