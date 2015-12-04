@@ -39,7 +39,6 @@ multiplayerMenu.prototype.drawInviteList = function(){
 multiplayerMenu.prototype.drawGameList = function(){
     ctx.drawImage(this.GameList, 0, 0);
     ctx.font = 'bold 10pt Calibri';
-    console.log("invite list", invitedToList);
     for(var i=0; i<invitedToList.length; i++){
         if (this.selectedInvite == i){
            ctx.fillStyle = "#CC0000"; 
