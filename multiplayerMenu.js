@@ -40,6 +40,11 @@ multiplayerMenu.prototype.drawGameList = function(){
     ctx.drawImage(this.GameList, 0, 0);
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<invitedToList.length; i++){
+        if (this.selectedInvite == i){
+           ctx.fillStyle = "#CC0000"; 
+       }else{
+           ctx.fillStyle = "#000000";
+       }
         ctx.fillText(invitedToList[i].participants[0].player.displayName, 60, 30+(i*20));
     }
 }
@@ -69,11 +74,10 @@ multiplayerMenu.prototype.clickedInvite = function(x,y) {
 multiplayerMenu.prototype.clickedGameList = function(x,y) {
     if (x < 320*ratioWidht){
         var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
-        this.selected = pos; 
+        this.selectedInvite = pos; 
     }
     if (x > 320*ratioWidht){
-        inviteID = usersFriends[this.selected].id;
-        createGame();
+        
     }
 }
 
