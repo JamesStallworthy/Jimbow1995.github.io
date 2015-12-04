@@ -48,4 +48,6 @@ function mouseDownHandler()
         MultiMenu.clicked(mouseX,mouseY);
     else if(gamestate == "invite")
         MultiMenu.clickedInvite(mouseX,mouseY);
+   else if(gamestate == "gameList")
+        MultiMenu.clickedGameList(mouseX,mouseY);
 }
