@@ -24,6 +24,7 @@ function createGame() {
 function joinGame(id) {
     player = "p_2";
     participant = "p_1";
+    matchID = id;
     var request = gapi.client.games.turnBasedMatches.join(
         {
             "matchId": id
