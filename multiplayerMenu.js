@@ -5,6 +5,7 @@ function multiplayerMenu() {
     this.GameList = new Image();
     this.loadImg();
     this.selected;
+    this.selectedInvite;
 }
 
 multiplayerMenu.prototype.loadImg = function() {
