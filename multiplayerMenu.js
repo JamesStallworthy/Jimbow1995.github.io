@@ -2,6 +2,7 @@ function multiplayerMenu() {
    
     this.createJoin = new Image();
     this.Invite = new Image();
+    this.GameList = new Image();
     this.loadImg();
     this.selected;
 }
@@ -10,6 +11,7 @@ multiplayerMenu.prototype.loadImg = function() {
     
     this.createJoin = new Image();
     this.Invite = new Image();
+    this.GameList = new Image();
     this.createJoin.src = "assets/CreateJoin.png";
     this.Invite.src = "assets/invite.png";
     this.GameList.src = "assets/ActiveGame.png";
