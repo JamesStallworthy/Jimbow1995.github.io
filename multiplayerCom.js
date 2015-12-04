@@ -82,9 +82,9 @@ function getData() {
 
 
 function activeGames() {
-    invitedToList = new Array();
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function (response) {
+        invitedToList = new Array();
         var z = 0;
         for (var i = 0; i < response.items.length; i++){
             if (response.items[i].userMatchStatus == "USER_INVITED"){
