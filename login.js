@@ -17,7 +17,7 @@ function load(){
         if(response == null){
             console.log("Games API loaded");
             googleAPILoaded = true;
-       
+            
         }
       });
    gapi.client.load('plus','v1',function(response) {

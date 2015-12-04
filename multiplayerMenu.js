@@ -19,6 +19,9 @@ multiplayerMenu.prototype.loadImg = function() {
 
 multiplayerMenu.prototype.drawCreateJoin = function () {
     ctx.drawImage(this.createJoin, 0, 0);
+    for(var i=0; i<invitedToList.length; i++){
+        invitedToList[i].userMatchStatus();
+    }
 }
 
 multiplayerMenu.prototype.drawInviteList = function(){
@@ -57,6 +60,7 @@ multiplayerMenu.prototype.clicked = function(x,y) {
         gamestate = "invite";
     }
     else{
+        activeGames();
         gamestate = "gameList";
     }
 }

@@ -88,6 +88,7 @@ function activeGames() {
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function (response) {
         console.log(response);
+        invitedToList = response.items;
     });
 }
 

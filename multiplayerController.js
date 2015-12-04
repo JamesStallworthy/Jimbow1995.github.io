@@ -22,6 +22,8 @@ var recieved = true;
 var player;
 var participant;
 
+var invitedToList = new Array();
+
 function multiplayerController(){
     if (gamestate == "createJoin"){
         MultiMenu.drawCreateJoin();
