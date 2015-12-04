@@ -82,6 +82,7 @@ function getData() {
 
 
 function activeGames() {
+    invitedToList = new Array();
     var request = gapi.client.games.turnBasedMatches.list();
     request.execute(function (response) {
         var z = 0;
