@@ -39,7 +39,7 @@ multiplayerMenu.prototype.drawGameList = function(){
     ctx.drawImage(this.GameList, 0, 0);
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<invitedToList.length; i++){
-        ctx.fillText(invitedToList[i].userMatchStatusy, 60, 30+(i*20));
+        ctx.fillText(invitedToList[i].userMatchStatus, 60, 30+(i*20));
     }
 }
 
