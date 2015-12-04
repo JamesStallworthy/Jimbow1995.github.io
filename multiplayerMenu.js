@@ -12,6 +12,7 @@ multiplayerMenu.prototype.loadImg = function() {
     this.Invite = new Image();
     this.createJoin.src = "assets/CreateJoin.png";
     this.Invite.src = "assets/invite.png";
+    this.GameList.src = "assets/ActiveGame.png";
 }
 
 multiplayerMenu.prototype.drawCreateJoin = function () {
@@ -33,6 +34,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
 }
 
 multiplayerMenu.prototype.drawGameList = function(){
+    ctx.drawImage(this.GameList, 0, 0);
     if (x < 320*ratioWidht){
         var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
         this.selected = pos; 
