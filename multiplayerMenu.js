@@ -82,6 +82,7 @@ multiplayerMenu.prototype.clickedGameList = function(x,y) {
         }
         else{
             cancelGame(invitedToList[this.selectedInvite].matchId);
+            activeGames();
         }
     }
 }
