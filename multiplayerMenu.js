@@ -19,8 +19,9 @@ multiplayerMenu.prototype.loadImg = function() {
 
 multiplayerMenu.prototype.drawCreateJoin = function () {
     ctx.drawImage(this.createJoin, 0, 0);
+    ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<invitedToList.length; i++){
-        invitedToList[i].userMatchStatus();
+        ctx.fillText(invitedToList[i].userMatchStatus, 60, 30+(i*20));
     }
 }
 
