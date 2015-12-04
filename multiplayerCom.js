@@ -21,12 +21,12 @@ function createGame() {
 }
 
 
-function joinGame() {
+function joinGame(id) {
     player = "p_2";
     participant = "p_1";
     var request = gapi.client.games.turnBasedMatches.join(
         {
-            "matchId": matchID
+            "matchId": id
         });
 
     request.execute(function (response) {
@@ -88,17 +88,14 @@ function activeGames() {
     });
 }
 
-function cancelGame() {
-    var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function (response) {
-        var newRequest = gapi.client.games.turnBasedMatches.cancel(
-            {
-                "matchId": response.items[0].matchId
-            });
-
-        newRequest.execute(function (response) {
-            console.log(response);
-            console.log("Game cancelled");
+function cancelGame(id) {
+    var request = gapi.client.games.turnBasedMatches.cancel(
+        {
+            "matchId": id
         });
+
+    request.execute(function (response) {
+        console.log(response);
+        console.log("Game cancelled");
     });
 }

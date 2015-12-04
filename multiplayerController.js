@@ -15,6 +15,8 @@ var matchVersion;
 //If true waiting to check the game data
 var checkTurnWait = false;
 
+var checkInviteList = false;
+
 //Check to see if data has been retrived before calling again
 var recieved = true;
 
@@ -34,6 +36,7 @@ function multiplayerController(){
     }
     if (gamestate == "gameList"){
         MultiMenu.drawGameList();
+        checkGameList();
     }
     else if (gamestate == "takeTurn"){
         Grid.drawGrid();
@@ -63,8 +66,22 @@ function checkTurn(){
             }
         },5000);
     }
-    
 }
+
+function checkGameList(){
+    if(!checkInviteList){
+        checkInviteList = true;
+        setTimeout(function(){
+            console.log("Checking after 5 seconds");
+            checkInviteList = false;
+            if (gamestate == "gameList"){
+                activeGames(); 
+            }
+        },5000);
+    }
+}
+
+
 
 function multiplayerPlaceCounter(col){
     Grid.insertCounter(col,2);
