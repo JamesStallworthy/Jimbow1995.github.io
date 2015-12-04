@@ -24,18 +24,14 @@ function createGame() {
 function joinGame() {
     player = "p_2";
     participant = "p_1";
-    var request = gapi.client.games.turnBasedMatches.list();
-    request.execute(function (response) {
-        matchID = response.items[0].matchId;
-        var newRequest = gapi.client.games.turnBasedMatches.join(
-            {
-                "matchId": response.items[0].matchId
-            });
-
-        newRequest.execute(function (response) {
-            console.log("Game joined");
-            getData();
+    var request = gapi.client.games.turnBasedMatches.join(
+        {
+            "matchId": matchID
         });
+
+    request.execute(function (response) {
+        console.log("Game joined");
+        getData();
     });
 }
 

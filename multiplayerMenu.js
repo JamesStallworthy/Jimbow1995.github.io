@@ -77,7 +77,13 @@ multiplayerMenu.prototype.clickedGameList = function(x,y) {
         this.selectedInvite = pos; 
     }
     if (x > 320*ratioWidht){
-        
+        matchID = invitedToList[selectedInvite].matchID;
+        if (y < 240*ratioHeight){
+            joinGame();
+        }
+        else{
+            cancelGame();
+        }
     }
 }
 
