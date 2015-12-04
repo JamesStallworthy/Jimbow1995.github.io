@@ -32,13 +32,28 @@ multiplayerMenu.prototype.drawInviteList = function(){
     }
 }
 
+multiplayerMenu.prototype.drawGameList = function(){
+    if (x < 320*ratioWidht){
+        var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
+        this.selected = pos; 
+    }
+    if (x > 320*ratioWidht){
+        if (x < 240*ratioHeight){
+                
+        }
+        else{
+            
+        }
+    }
+}
+
 multiplayerMenu.prototype.clicked = function(x,y) {
     if (x < 320*ratioWidht){
         console.log("gamestate is now invite");
         gamestate = "invite";
     }
     else{
-        joinGame();
+        gamestate = "gameList";
     }
 }
 
@@ -52,3 +67,15 @@ multiplayerMenu.prototype.clickedInvite = function(x,y) {
         createGame();
     }
 }
+
+multiplayerMenu.prototype.clickedGameList = function(x,y) {
+    if (x < 320*ratioWidht){
+        var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
+        this.selected = pos; 
+    }
+    if (x > 320*ratioWidht){
+        inviteID = usersFriends[this.selected].id;
+        createGame();
+    }
+}
+

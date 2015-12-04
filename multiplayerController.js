@@ -30,6 +30,9 @@ function multiplayerController(){
     if (gamestate == "invite"){
         MultiMenu.drawInviteList();
     }
+    if (gamestate == "gameList"){
+        MultiMenu.drawGameList();
+    }
     else if (gamestate == "takeTurn"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
