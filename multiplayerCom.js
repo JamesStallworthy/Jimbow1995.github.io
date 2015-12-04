@@ -86,6 +86,7 @@ function activeGames() {
     request.execute(function (response) {
         console.log(response);
         for (var i = 0; i < response.items.lenght; i++){
+            console.log(userMatchStatus);
             if (response.items[i].userMatchStatus == "USER_INVITED"){
                 invitedToList[i] = response.items[i];
             }
