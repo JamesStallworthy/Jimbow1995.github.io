@@ -42,7 +42,7 @@ loadingScreen.prototype.drawLogin= function(){
 
 
  /**
-* Method that checks if login button has been clicked
+* Method that checks if login button has been clicked, if so call google login
 *@param {integer} x Mouses X position.
 *@param {integer} y Mouses Y position.
 * @memberof loadingScreen
