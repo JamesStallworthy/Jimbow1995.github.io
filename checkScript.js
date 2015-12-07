@@ -82,5 +82,6 @@ checkScript.prototype.TieConditions = function(){
     }
     if (draw){
         console.log("draw!!!");
+        gamestate="draw"; 
     }
 }
