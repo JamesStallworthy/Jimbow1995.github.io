@@ -23,6 +23,7 @@ multiplayerMenu.prototype.drawCreateJoin = function () {
 
 multiplayerMenu.prototype.drawInviteList = function(){
     ctx.drawImage(this.Invite, 0, 0);
+    ctx.textAlign="left"; 
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<usersFriends.length; i++)
     {
@@ -37,6 +38,7 @@ multiplayerMenu.prototype.drawInviteList = function(){
 
 multiplayerMenu.prototype.drawGameList = function(){
     ctx.drawImage(this.GameList, 0, 0);
+    ctx.textAlign="left"; 
     ctx.font = 'bold 10pt Calibri';
     for(var i=0; i<invitedToList.length; i++){
         if (this.selectedInvite == i){
