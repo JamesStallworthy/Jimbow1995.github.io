@@ -58,7 +58,7 @@ winScreen.prototype.drawImgWin2 = function(){
 * Draws draw screen
 * @memberof winScreen
 */
-winScreen.prototype.drawImgWin2 = function(){
+winScreen.prototype.DrawImgDrawScreen = function(){
    ctx.drawImage(this.DrawImgDrawScreen,0,0);
 }
 

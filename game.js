@@ -76,7 +76,7 @@ function update(){
         Leaderboard.drawImgBoard();
         //LeaderBoard screen
     }
-        if (gamestate == "draw"){
+    if (gamestate == "draw"){
         WinS.DrawImgDrawScreen();
         //Player 2 win screen
     }
