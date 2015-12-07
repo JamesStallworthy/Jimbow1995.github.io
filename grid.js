@@ -1,3 +1,13 @@
+/**
+ * @fileOverview Holds the game logic behind the grid/board of the game.
+ * @name grid.js
+ */
+
+/** 
+Constructor calls methods to create the grid and load the image.
+@class grid
+@classdesc Class holds scripts and data for the grid/board.
+*/
 function grid(){
     //0 = no counter, 1 = red, 2=yellow
     this.grid = new Array(7);
@@ -7,24 +17,36 @@ function grid(){
     this.clearArray();
 }
 
-//Loads the grid image
+ /**
+* Loads images for the grid.
+* @memberof grid
+*/
 grid.prototype.loadGrid = function(){
     this.gridImg = new Image();
     this.gridImg.src = "assets/grid.png";
 }
 
-//Draw grid to the screen
+ /**
+* Draw method to draw grid image to screen.
+* @memberof grid
+*/
 grid.prototype.drawGrid = function(){
      ctx.drawImage(this.gridImg,0,0);
 }
 
-//clears the array so that it is empty
+ /**
+* Initialises the grid array.
+* @memberof grid
+*/
 grid.prototype.createArray = function(){
     for (var i = 0; i < 10; i++) {
         this.grid[i] = new Array(6);
     }
 }
-
+ /**
+* Fills the grid array with 0's.
+* @memberof grid
+*/
 grid.prototype.clearArray = function(){
     for (var x=0; x <7; x++){
         for(var y=0; y<6 ; y++){
@@ -33,8 +55,12 @@ grid.prototype.clearArray = function(){
     }
 }
 
-//Column you want to insert into and the team that of the counter being inserted
-//1 = red, 2=yellow
+ /**
+* Method for inserting counters into the grid.
+*@param {integer} col Number of the column to insert counter.
+*@param {integer} team ID of the counter colour, 1 = Red, 2 = Yellow.
+* @memberof grid
+*/
 grid.prototype.insertCounter = function(col, team){
     for (var i = 0; i < 6 ; i++){
         if (this.grid[col][i]==0){
@@ -45,6 +71,10 @@ grid.prototype.insertCounter = function(col, team){
     }
 }
 
+ /**
+* Method for drawing counters to grid.
+* @memberof grid
+*/
 grid.prototype.drawCountersToGrid = function(){
     for (var x = 0; x < 7 ; x++){
         for (var y = 0; y < 6 ; y++){

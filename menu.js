@@ -1,5 +1,5 @@
 /**
- * @fileOverview Handles the main menu sript
+ * @fileOverview Handles the main menu script
  * @name menu.js
  */
 

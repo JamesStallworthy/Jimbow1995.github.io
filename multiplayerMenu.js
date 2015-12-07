@@ -1,5 +1,4 @@
 function multiplayerMenu() {
-   
     this.createJoin = new Image();
     this.Invite = new Image();
     this.GameList = new Image();

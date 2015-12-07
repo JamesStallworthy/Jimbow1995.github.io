@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: grid</title>
+    <title>JSDoc: Class: winScreen</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: grid</h1>
+    <h1 class="page-title">Class: winScreen</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2>grid</h2>
+        <h2>winScreen</h2>
         
-            <div class="class-description">Class holds scripts and data for the grid/board.</div>
+            <div class="class-description">Holds images and draws multiple different screens once the game has finished.</div>
         
     
 </header>
@@ -44,14 +44,14 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="grid"><span class="type-signature"></span>new grid<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="winScreen"><span class="type-signature"></span>new winScreen<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Constructor calls methods to create the grid and load the image.
+    Constructor calls method to load all the images used for the win screens.
 </div>
 
 
@@ -95,7 +95,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line6">line 6</a>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -144,342 +144,14 @@
 
     
 
-    <h4 class="name" id="clearArray"><span class="type-signature"></span>clearArray<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="clicked"><span class="type-signature"></span>clicked<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Fills the grid array with 0's.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line50">line 50</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="createArray"><span class="type-signature"></span>createArray<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Initialises the grid array.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line41">line 41</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="drawCountersToGrid"><span class="type-signature"></span>drawCountersToGrid<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Method for drawing counters to grid.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line78">line 78</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="drawGrid"><span class="type-signature"></span>drawGrid<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Draw method to draw grid image to screen.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line33">line 33</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="insertCounter"><span class="type-signature"></span>insertCounter<span class="signature">(col, team)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Method for inserting counters into the grid.
+    Method that checks if either menu or leaderBoard buttons have been clicked
 </div>
 
 
@@ -515,7 +187,7 @@
 
         <tr>
             
-                <td class="name"><code>col</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -531,14 +203,14 @@
 
             
 
-            <td class="description last">Number of the column to insert counter.</td>
+            <td class="description last">Mouses X position.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>team</code></td>
+                <td class="name"><code>y</code></td>
             
 
             <td class="type">
@@ -554,7 +226,7 @@
 
             
 
-            <td class="description last">ID of the counter colour, 1 = Red, 2 = Yellow.</td>
+            <td class="description last">Mouses Y position.</td>
         </tr>
 
     
@@ -595,7 +267,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line64">line 64</a>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -626,14 +298,14 @@
 
     
 
-    <h4 class="name" id="loadGrid"><span class="type-signature"></span>loadGrid<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="drawImg"><span class="type-signature"></span>drawImg<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Loads images for the grid.
+    Draw win screen.
 </div>
 
 
@@ -677,7 +349,253 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="grid.js.html">grid.js</a>, <a href="grid.js.html#line24">line 24</a>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="drawImgWin1"><span class="type-signature"></span>drawImgWin1<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Draws player 1 win screen.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="drawImgWin2"><span class="type-signature"></span>drawImgWin2<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Draws player 2 win screen.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="loadImg"><span class="type-signature"></span>loadImg<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Loads images for the winScreens.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="winScreen.js.html">winScreen.js</a>, <a href="winScreen.js.html#line22">line 22</a>
     </li></ul></dd>
     
 

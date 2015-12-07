@@ -1,3 +1,4 @@
+/** Callback function for login, if user logged in loads the googling loading scripts, if not logged in pops login screen up */
 function handleAuthResult(auth){
     console.log(auth);
     if (auth && auth.error == null) {
@@ -9,7 +10,7 @@ function handleAuthResult(auth){
         gapi.auth.signIn();
   }
 }
-
+/** Load the Google games API and Plus API */
 function load(){
     console.log("Running load function");
     gapi.client.load('games','v1',function(response) {

@@ -1,9 +1,7 @@
-//setInvite
-//create
-//taketurn
-//waiting
-//joingame
-//taketurn
+/**
+ * @fileOverview Controls multiple aspects of the multiplayer, including the menu and calling the communication functions
+ * @name multiplayerController.js
+ */
 
 //Id of player to invite on creating of game
 var inviteID = ""
@@ -26,6 +24,7 @@ var participant;
 
 var invitedToList = new Array();
 
+/** Extension of the update function to control the multiplayer related game states */
 function multiplayerController(){
     if (gamestate == "createJoin"){
         MultiMenu.drawCreateJoin();
@@ -51,10 +50,12 @@ function multiplayerController(){
     }
 }
 
+/** Used to update the ID of the player you want to invite */
 function setInviteID(data){
     inviteID = data;
 }
 
+/** Timer to check the status of the game. Calls getData() */
 function checkTurn(){
     if(!checkTurnWait){
         checkTurnWait = true;
@@ -68,6 +69,7 @@ function checkTurn(){
     }
 }
 
+/** Timer to update the invite list */
 function checkGameList(){
     if(!checkInviteList){
         checkInviteList = true;
@@ -81,8 +83,9 @@ function checkGameList(){
     }
 }
 
-
-
+/** Used to place the other users counter into the current grid
+ * @param {integer} col Column number
+ */ 
 function multiplayerPlaceCounter(col){
     Grid.insertCounter(col,2);
 }

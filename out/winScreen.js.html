@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: grid.js</title>
+    <title>JSDoc: Source: winScreen.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: grid.js</h1>
+    <h1 class="page-title">Source: winScreen.js</h1>
 
     
 
@@ -27,102 +27,68 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileOverview Holds the game logic behind the grid/board of the game.
- * @name grid.js
+ * @fileOverview Holds scripts that control displaying win screen.
+ * @name winScreen.js
  */
 
 /** 
-Constructor calls methods to create the grid and load the image.
-@class grid
-@classdesc Class holds scripts and data for the grid/board.
+Constructor calls method to load all the images used for the win screens.
+@class winScreen
+@classdesc Holds images and draws multiple different screens once the game has finished.
 */
-function grid(){
-    //0 = no counter, 1 = red, 2=yellow
-    this.grid = new Array(7);
-    this.gridImg = new Image();
-    this.createArray();
-    this.loadGrid();
-    this.clearArray();
+function winScreen(){
+  this.winImg = new Image();
+  this.winImgPly1 = new Image();
+  this.winImgPly2 = new Image();
+    
+  this.loadImg();
+}
+ /**
+* Loads images for the winScreens.
+* @memberof winScreen
+*/
+winScreen.prototype.loadImg = function(){
+    this.winImg = new Image();
+    this.winImg.src = "assets/winner.jpg";
+    this.winImgPly1 = new Image();
+    this.winImgPly1.src ="assets/redwins.jpg"; 
+    this.winImgPly2 = new Image();
+    this.winImgPly2.src ="assets/yellowwins.jpg"; 
 }
 
  /**
-* Loads images for the grid.
-* @memberof grid
+* Draw win screen.
+* @memberof winScreen
 */
-grid.prototype.loadGrid = function(){
-    this.gridImg = new Image();
-    this.gridImg.src = "assets/grid.png";
+winScreen.prototype.drawImg = function(){
+   ctx.drawImage(this.winImg,0,0);
 }
 
  /**
-* Draw method to draw grid image to screen.
-* @memberof grid
+* Draws player 1 win screen.
+* @memberof winScreen
 */
-grid.prototype.drawGrid = function(){
-     ctx.drawImage(this.gridImg,0,0);
+winScreen.prototype.drawImgWin1 = function(){
+   ctx.drawImage(this.winImgPly1,0,0);
 }
 
  /**
-* Initialises the grid array.
-* @memberof grid
+* Draws player 2 win screen.
+* @memberof winScreen
 */
-grid.prototype.createArray = function(){
-    for (var i = 0; i &lt; 10; i++) {
-        this.grid[i] = new Array(6);
-    }
-}
- /**
-* Fills the grid array with 0's.
-* @memberof grid
-*/
-grid.prototype.clearArray = function(){
-    for (var x=0; x &lt;7; x++){
-        for(var y=0; y&lt;6 ; y++){
-            this.grid[x][y]=0;
-        }
-    }
+winScreen.prototype.drawImgWin2 = function(){
+   ctx.drawImage(this.winImgPly2,0,0);
 }
 
  /**
-* Method for inserting counters into the grid.
-*@param {integer} col Number of the column to insert counter.
-*@param {integer} team ID of the counter colour, 1 = Red, 2 = Yellow.
-* @memberof grid
+* Method that checks if either menu or leaderBoard buttons have been clicked
+*@param {integer} x Mouses X position.
+*@param {integer} y Mouses Y position.
+* @memberof winScreen
 */
-grid.prototype.insertCounter = function(col, team){
-    for (var i = 0; i &lt; 6 ; i++){
-        if (this.grid[col][i]==0){
-            this.grid[col][i] = team;
-            console.log("Inserted counter into col: "+col+" row: "+i + " for team: "+ team);
-            break;
-        }
-    }
-}
-
- /**
-* Method for drawing counters to grid.
-* @memberof grid
-*/
-grid.prototype.drawCountersToGrid = function(){
-    for (var x = 0; x &lt; 7 ; x++){
-        for (var y = 0; y &lt; 6 ; y++){
-            if(this.grid[x][y]!=0){
-                if(this.grid[x][y]==1){
-                    ctx.drawImage(Counter.redCounterImg,70+(x*74),407 - (y*74));
-                    Check.check(x,y,1);
-                }
-                if(this.grid[x][y]==2){
-                    ctx.drawImage(Counter.yellowCounterImg,70+(x*74),407 - (y*74));
-                    Check.check(x,y,2);
-                }
-            }
-        }
-    }
-}
-
-
-
-</code></pre>
+winScreen.prototype.clicked = function(mouseX, mouseY){
+  gamestate = "menu";
+}</code></pre>
         </article>
     </section>
 

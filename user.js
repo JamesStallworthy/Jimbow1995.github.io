@@ -1,7 +1,13 @@
+/**
+ * @fileOverview Holds scripts that take user input.
+ * @name user.js
+ */
+
 document.addEventListener("keydown", keyDownHandler, false);
 //event listener for mouse down
 document.addEventListener("mousedown", mouseDownHandler, false);
 
+/** Deals with key presses upon being pressed.**/
 function keyDownHandler(e) {
 		if(e.keyCode == 39) {
 			Arrow.rightPressed = true; 
@@ -29,7 +35,7 @@ function keyDownHandler(e) {
     
 }
 
-//When mouse us pressed get location and pass to location check
+/** Deals with mouses presses upon pressed.**/
 function mouseDownHandler()
 {
     mouseX=event.pageX-canvas.offsetLeft;
