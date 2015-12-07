@@ -47,6 +47,6 @@ loadingScreen.prototype.drawLogin= function(){
 *@param {integer} y Mouses Y position.
 * @memberof loadingScreen
 */
-winScreen.prototype.clicked = function(mouseX, mouseY){
+loadingScreen.prototype.clicked = function(mouseX, mouseY){
    gapi.auth.signIn();
 }
