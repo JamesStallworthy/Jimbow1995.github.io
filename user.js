@@ -19,20 +19,6 @@ function keyDownHandler(e) {
         {
             Arrow.spacebarPressed =true;   
         }
-        else if(e.keyCode == 67)
-        {
-            console.log("c pressed");
-            //createGame();
-        }
-        else if(e.keyCode == 88){
-            console.log("x pressed");
-            cancelGame();
-        }
-        else if(e.keyCode == 76){
-            console.log("l pressed");
-            activeGames();
-        }
-    
 }
 
 /** Deals with mouses presses upon pressed.**/
