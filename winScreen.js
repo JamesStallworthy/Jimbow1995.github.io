@@ -58,9 +58,10 @@ winScreen.prototype.drawImgWin2 = function(){
 * Draws draw screen
 * @memberof winScreen
 */
-winScreen.prototype.DrawImgDrawScreen = function(){
-    ctx.drawImage(this.DrawImgDrawScreen,0,0);
+winScreen.prototype.drawImgWin2 = function(){
+   ctx.drawImage(this.DrawImgDrawScreen,0,0);
 }
+
 
  /**
 * Method that checks if either menu or leaderBoard buttons have been clicked
