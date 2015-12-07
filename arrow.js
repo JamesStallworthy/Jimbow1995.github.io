@@ -1,3 +1,14 @@
+/**
+ * @fileOverview Holds the game controls, creates the arrow and then controls it and placement of the counter.
+ * @name arrow.js
+ */
+
+/** 
+Constructor creates the variables for the class.
+@class arrow
+*/
+
+
 function arrow(){
     this.arrowLoaded = false;
     this.rightPressed = false; 
@@ -20,7 +31,8 @@ arrow.prototype.resetArrow = function(){
     this.Playerturn = 0; 
     this.arrowData = {x:80, y:0, width:75, height:73};
 }
-//Loads the grid image
+
+/** The lodArrow function gets the image of each colour counter */
 arrow.prototype.loadArrow = function(){
     this.arrowImgPlayer1 = new Image(); 
     this.arrowImgPlayer1.src = "assets/arrowRed.png";
@@ -29,7 +41,7 @@ arrow.prototype.loadArrow = function(){
 }
 
 
-//Draw arrow to the screen
+/** The drawArrow function draws the image we got in the last function */
 arrow.prototype.drawArrow = function(){
     this.moveArrow(); 
     if(this.Playerturn == 1)
@@ -42,7 +54,7 @@ arrow.prototype.drawArrow = function(){
         }  
 }
 
-// use arrow keys to pick which column you want a counter 
+/** The moveArrow function uses the arrow keys to move the arrow */
 arrow.prototype.moveArrow = function(){
 		
     if(this.rightPressed){
@@ -73,12 +85,13 @@ arrow.prototype.moveArrow = function(){
                 }
         }
 		
-		//of the spaceship goes less than zero reset its position
+		//if the arrow goes less than the first column
 		if(this.arrowData.x <= 78){
              this.arrowData.x = 78;
 		}
 }
 
+/** The moveArrowMouse uses the mouse to click on a place to place a counter*/
 arrow.prototype.moveArrowMouse = function(xpos,ypos){
                 if(xpos >= 65*ratioWidht && xpos <= 135*ratioWidht){
                     if (gamestate == "takeTurn"){
@@ -181,7 +194,7 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
 }
 
 
-// uses spacebar to place a counter, it works out what whose turn it is and places the right colour counter
+/** The placeCounter function uses the spacebar to place the counter in the position of where the arrow is */
 arrow.prototype.placeCounter = function(){
   if(Grid.grid[this.pickerPlace][5] == 0)
     {
