@@ -7,7 +7,7 @@ function handleAuthResult(auth){
     } else {
         console.log("Login failed");
         //Call popup window for login
-        gapi.auth.signIn();
+        gamestate = "login";
   }
 }
 /** Load the Google games API and Plus API */

@@ -53,7 +53,9 @@ function update(){
     if (gamestate == "loading"){
         loadingS.drawLoading();
     }
-    
+    if (gamestate == "login"){
+        loadingS.drawLogin();
+    }
     if (gamestate=="menu"){
          Menu.drawMenu();
     }

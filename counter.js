@@ -8,7 +8,6 @@ Constructor loads images.
 @class counters
 @classdesc Object that holds both red and yellow counter images.
 */
-
 function counters(){
     this.redCounterImg = new Image();
     this.yellowCounterImg = new Image();
