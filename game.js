@@ -24,6 +24,7 @@ canvas.width = screenWidth;
 canvas.height = screenHeight;
 
 //Init objects
+var loadingS = new loadingScreen();
 var Grid = new grid();
 var Counter = new counters();
 var Arrow = new arrow();
@@ -34,7 +35,7 @@ var Leaderboard = new leaderBoard();
 var MultiMenu = new multiplayerMenu();
 
 //determines what state the user is in
-var gamestate="menu";
+var gamestate="loading";
 
 var googleAPILoaded = false;
 
@@ -49,6 +50,10 @@ update();
 function update(){
     //every frame clear the whole canvas
     ctx.clearRect(0,0, canvas.width, canvas.height);
+    if (gamestate == "loading"){
+        loadingS.drawLoading();
+    }
+    
     if (gamestate=="menu"){
          Menu.drawMenu();
     }

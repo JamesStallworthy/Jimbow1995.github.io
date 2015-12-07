@@ -27,4 +27,5 @@ function load(){
        var request = gapi.client.plus.people.list({"collection": "visible","userId": "me"});
        request.execute(function(response){usersFriends=response.items});
       });
+      gamestate = "menu";
 }
