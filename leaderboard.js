@@ -20,9 +20,9 @@ leaderBoard.prototype.drawImgBoard = function () {
         ctx.textAlign="center"; 
         ctx.fillText(leaderboardData[i].formattedScoreRank, 85, 110+(i*30));
         ctx.textAlign="left"; 
-        ctx.fillText(leaderboardData[i].formattedScore, 150, 110+(i*30));
+        ctx.fillText(leaderboardData[i].player.name.givenName + " " + leaderboardData[i].player.name.familyName , 150, 110+(i*30));
         ctx.textAlign="center"; 
-        ctx.fillText(leaderboardData[i].player.name.givenName, 525, 110+(i*30));
+        ctx.fillText(leaderboardData[i].formattedScore, 525, 110+(i*30));
     }
 }
 
