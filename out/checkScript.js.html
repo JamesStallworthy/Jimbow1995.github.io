@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: checkScript.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: checkScript.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileOverview Checks for a row after counter placement
+ * @name checkScript.js
+ */
+
+/** 
+Constructor sets win value to false
+@class checkScript
+@classdesc Checks directions based upon position in the grid to find a row of four
+*/
+function checkScript(){
+  this.won =false;
+    this.draw =false; 
+  
+}
+
+/**
+* Checks one row from a given point in a given direction.
+*@param {integer} xPos The x position at which the check starts
+*@param {integer} yPos The y position at which the check starts
+*@param {integer} xMove The amount moved in the x direction -1/0/1
+*@param {integer} yMove The amount moved in the y direction -1/0/1
+*@param {integer} counterCheck The counter being checked for
+*@memberof checkScript
+*/
+checkScript.prototype.checkLine = function(xPos,yPos,xMove, yMove,counterCheck){
+    if(Grid.grid[xPos+xMove][yPos-yMove] == counterCheck 
+       &amp;&amp; Grid.grid[xPos+(xMove*2)][yPos-(yMove*2)] == counterCheck 
+       &amp;&amp; Grid.grid[xPos+(xMove*3)][yPos-(yMove*3)] == counterCheck)
+       this.won=true;
+}
+
+/**
+* Checks which directions need to be checked based on the position in the gird and calls checkLine with the required parameters
+*@param {integer} x The x position at which the check starts
+*@param {integer} y The y position at which the check starts
+*@param {integer} counter The counter type at this position
+*@memberof checkScript
+*/
+checkScript.prototype.check = function(x,y,counter){
+    //Check Right
+    if(x&lt;=3)
+        this.checkLine(x,y,1,0,counter);
+    //Check Down Right
+    if(!this.won &amp;&amp; x&lt;=3 &amp;&amp; y>=3)
+        this.checkLine(x,y,1,1,counter);
+    //Check Down
+    if(!this.won &amp;&amp; y>=3)
+        this.checkLine(x,y,0,1,counter);
+    //Check Down Left
+    if(!this.won &amp;&amp; x>=3 &amp;&amp; y>=3)
+        this.checkLine(x,y,-1,1,counter);
+    //Check Left
+    if(!this.won &amp;&amp; x>=3)
+        this.checkLine(x,y,-1,0,counter);
+    //Check Up Left
+    if(!this.won &amp;&amp; x>=3 &amp;&amp; y&lt;=2)
+        this.checkLine(x,y,-1,-1,counter);
+    //Check Up Right
+    if(!this.won &amp;&amp; x&lt;=3 &amp;&amp; y&lt;=2)
+        this.checkLine(x,y,1,-1,counter);
+    if(this.won){
+        this.won = false;
+        console.log("Gamestate is winscreen");
+        console.log("Player" + counter + " won!");
+        gamestate="winnerPlayer" + counter;
+        reset();
+    }
+}
+
+/**
+*Checks if there are counters in every single slot in the grid and change image to a draw screen 
+*@memberof checkScript
+*/
+checkScript.prototype.TieConditions = function(){
+    draw =true;
+    for(var i = 0; i &lt;= 6; i++){
+        if(Grid.grid[i][5] == 0){
+            draw = false;
+        }
+
+    }
+    if (draw){
+        console.log("draw!!!");
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="arrow.html">arrow</a></li><li><a href="checkScript.html">checkScript</a></li><li><a href="counters.html">counters</a></li><li><a href="grid.html">grid</a></li><li><a href="menu.html">menu</a></li><li><a href="winScreen.html">winScreen</a></li></ul><h3>Global</h3><ul><li><a href="global.html#activeGames">activeGames</a></li><li><a href="global.html#cancelGame">cancelGame</a></li><li><a href="global.html#checkGameList">checkGameList</a></li><li><a href="global.html#checkTurn">checkTurn</a></li><li><a href="global.html#createGame">createGame</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#handleAuthResult">handleAuthResult</a></li><li><a href="global.html#joinGame">joinGame</a></li><li><a href="global.html#keyDownHandler">keyDownHandler</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#mouseDownHandler">mouseDownHandler</a></li><li><a href="global.html#multiplayerController">multiplayerController</a></li><li><a href="global.html#multiplayerPlaceCounter">multiplayerPlaceCounter</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#resize">resize</a></li><li><a href="global.html#setInviteID">setInviteID</a></li><li><a href="global.html#takeTurn">takeTurn</a></li><li><a href="global.html#update">update</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Dec 07 2015 13:36:28 GMT+0000 (GMT Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

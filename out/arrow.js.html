@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: arrow.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: arrow.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileOverview Holds the game controls, creates the arrow and then controls it and placement of the counter.
+ * @name arrow.js
+ */
+
+/** 
+Constructor creates the variables for the class.
+@class arrow
+*/
+function arrow(){
+    this.arrowLoaded = false;
+    this.rightPressed = false; 
+    this.leftPressed = false;
+    this.spacebarPressed =false;
+    this.pickerPlace = 0; //the place of which the arrow 
+    this.Turn = 0; // which turn the game is on 
+    this.Playerturn = 0; // which players turn  
+    //data for the arrow, positon and size
+    this.loadArrow();
+}
+
+/** Reset function resets the arrow
+*@memberof arrow
+*/
+arrow.prototype.resetArrow = function(){
+    this.arrowLoaded = false;
+    this.rightPressed = false; 
+    this.leftPressed = false;
+    this.spacebarPressed =false;
+    this.pickerPlace = 0; 
+    this.Turn = 0; 
+    this.Playerturn = 0; 
+    this.arrowData = {x:80, y:0, width:75, height:73};
+}
+
+/** The lodArrow function gets the image of each colour counter 
+*@memberof arrow
+*/
+arrow.prototype.loadArrow = function(){
+    this.arrowImgPlayer1 = new Image(); 
+    this.arrowImgPlayer1.src = "assets/arrowRed.png";
+    this.arrowImgPlayer2 = new Image(); 
+    this.arrowImgPlayer2.src = "assets/arrowYellow.png";
+}
+
+
+/** The drawArrow function draws the image we got in the last function 
+*@memberof arrow
+*/
+arrow.prototype.drawArrow = function(){
+    this.moveArrow(); 
+    if(this.Playerturn == 1)
+        {
+            ctx.drawImage(this.arrowImgPlayer1,this.arrowData.x,this.arrowData.y, 40 , 35); 
+        }
+    if(this.Playerturn == 2)
+        {
+            ctx.drawImage(this.arrowImgPlayer2,this.arrowData.x,this.arrowData.y, 40 , 35);    
+        }  
+}
+
+/** The moveArrow function uses the arrow keys to move the arrow 
+*@memberof arrow
+*/
+arrow.prototype.moveArrow = function(){
+		
+    if(this.rightPressed){
+        this.arrowData.x += 74; 
+        this.rightPressed = false;
+        this.spacebarPressed = false;
+        this.pickerPlace++;
+        
+        if(this.pickerPlace > 6)
+            {
+                this.pickerPlace = 6; 
+            }      
+        }
+      
+        if(this.arrowData.x >= 521){
+            this.arrowData.x = 521;
+        }
+
+    
+		if(this.leftPressed){
+            this.arrowData.x -= 74; 
+            this.leftPressed = false;
+            this.spacebarPressed = false;
+            this.pickerPlace--;
+            if(this.pickerPlace &lt; 0)
+                {
+                    this.pickerPlace = 0;
+                }
+        }
+		
+		//if the arrow goes less than the first column
+		if(this.arrowData.x &lt;= 78){
+             this.arrowData.x = 78;
+		}
+}
+
+/** The moveArrowMouse uses the mouse to click on a place to place a counter
+*@memberof arrow
+*/
+arrow.prototype.moveArrowMouse = function(xpos,ypos){
+                if(xpos >= 65*ratioWidht &amp;&amp; xpos &lt;= 135*ratioWidht){
+                    if (gamestate == "takeTurn"){
+                        this.arrowData.x = 74;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 0;
+                        takeTurn(Arrow.pickerPlace);
+                    }else {
+                        this.arrowData.x = 74;  
+                        this.pickerPlace = 0;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    }
+                }
+                else if(xpos >= 136*ratioWidht &amp;&amp; xpos &lt;=207*ratioWidht){
+                     if (gamestate == "takeTurn"){
+                        this.arrowData.x = 154;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 1;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 154;
+                        this.pickerPlace = 1;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);  
+                        }
+               }
+                else if(xpos >= 208*ratioWidht &amp;&amp; xpos &lt;=280*ratioWidht){
+                    if (gamestate == "takeTurn"){
+                        this.arrowData.x = 228;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 2;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 228;
+                        this.pickerPlace = 2;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
+               }
+                else if(xpos >= 281*ratioWidht &amp;&amp; xpos &lt;=355*ratioWidht){
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 302;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 3;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 302;
+                        this.pickerPlace =3;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
+               }
+                else if(xpos >= 356*ratioWidht &amp;&amp; xpos &lt;=430*ratioWidht){
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 376;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 3;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 376;
+                        this.pickerPlace = 4;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
+               }
+                else if(xpos >= 431*ratioWidht &amp;&amp; xpos &lt;=505*ratioWidht){
+                     if(gamestate == "takeTurn"){
+                        this.arrowData.x = 450;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 5;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 450;
+                        this.pickerPlace = 5;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
+               }        
+                else if(xpos >= 506*ratioWidht &amp;&amp; xpos &lt;=580*ratioWidht){
+                    if(gamestate == "takeTurn"){
+                        this.arrowData.x = 524;
+                        Grid.insertCounter(Arrow.pickerPlace,1);
+                        console.log("Your turn was: ", Arrow.pickerPlace);
+                        this.pickerPlace = 6;
+                        takeTurn(Arrow.pickerPlace);
+                     } else {
+                        this.arrowData.x = 524;
+                        this.pickerPlace = 6;
+                        this.Turn++;
+                        Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                     }
+               }
+}
+
+
+/** The placeCounter function uses the spacebar to place the counter in the position of where the arrow is 
+*@memberof arrow
+*/
+arrow.prototype.placeCounter = function(){
+  if(Grid.grid[this.pickerPlace][5] == 0)
+    {
+        if(this.Turn % 2 == 0) // uses modulous to see whose go it is, if the turn is not even then it is player 1s if it sint its player 2s 
+        {
+            this.Playerturn = 1; 
+        }
+        else
+        {
+            this.Playerturn = 2; 
+        }
+
+        if(this.spacebarPressed)
+            {
+                if (gamestate == "takeTurn"){
+                    Grid.insertCounter(Arrow.pickerPlace,1);
+                    console.log("Your turn was: ", Arrow.pickerPlace);
+                    takeTurn(Arrow.pickerPlace);
+                    this.spacebarPressed = false;
+                }else{
+                    Grid.insertCounter(Arrow.pickerPlace,Arrow.Playerturn);
+                    this.Turn++;
+                    this.spacebarPressed = false;
+                }
+            }
+    }
+}
+
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="arrow.html">arrow</a></li><li><a href="checkScript.html">checkScript</a></li><li><a href="counters.html">counters</a></li><li><a href="grid.html">grid</a></li><li><a href="menu.html">menu</a></li><li><a href="winScreen.html">winScreen</a></li></ul><h3>Global</h3><ul><li><a href="global.html#activeGames">activeGames</a></li><li><a href="global.html#cancelGame">cancelGame</a></li><li><a href="global.html#checkGameList">checkGameList</a></li><li><a href="global.html#checkTurn">checkTurn</a></li><li><a href="global.html#createGame">createGame</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#handleAuthResult">handleAuthResult</a></li><li><a href="global.html#joinGame">joinGame</a></li><li><a href="global.html#keyDownHandler">keyDownHandler</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#mouseDownHandler">mouseDownHandler</a></li><li><a href="global.html#multiplayerController">multiplayerController</a></li><li><a href="global.html#multiplayerPlaceCounter">multiplayerPlaceCounter</a></li><li><a href="global.html#reset">reset</a></li><li><a href="global.html#resize">resize</a></li><li><a href="global.html#setInviteID">setInviteID</a></li><li><a href="global.html#takeTurn">takeTurn</a></li><li><a href="global.html#update">update</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Dec 07 2015 13:36:28 GMT+0000 (GMT Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

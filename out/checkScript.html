@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: menu</title>
+    <title>JSDoc: Class: checkScript</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: menu</h1>
+    <h1 class="page-title">Class: checkScript</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2>menu</h2>
+        <h2>checkScript</h2>
         
-            <div class="class-description">Class holds scripts and data for drawing the menu and menu functionality.</div>
+            <div class="class-description">Checks directions based upon position in the grid to find a row of four</div>
         
     
 </header>
@@ -44,14 +44,14 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="menu"><span class="type-signature"></span>new menu<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="checkScript"><span class="type-signature"></span>new checkScript<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Constructor Initialises variables and runs the image loader function
+    Constructor sets win value to false
 </div>
 
 
@@ -95,7 +95,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="menu.js.html">menu.js</a>, <a href="menu.js.html#line6">line 6</a>
+        <a href="checkScript.js.html">checkScript.js</a>, <a href="checkScript.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -144,14 +144,14 @@
 
     
 
-    <h4 class="name" id="clicked"><span class="type-signature"></span>clicked<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="check"><span class="type-signature"></span>check<span class="signature">(x, y, counter)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Checks the location of a mouse click and determines if a button was pressed, if it was, the required function is run or gamestate is changed
+    Checks which directions need to be checked based on the position in the gird and calls checkLine with the required parameters
 </div>
 
 
@@ -203,7 +203,7 @@
 
             
 
-            <td class="description last">The x position of the mouse when clicked</td>
+            <td class="description last">The x position at which the check starts</td>
         </tr>
 
     
@@ -226,7 +226,30 @@
 
             
 
-            <td class="description last">The y position of the mouse when clicked</td>
+            <td class="description last">The y position at which the check starts</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>counter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The counter type at this position</td>
         </tr>
 
     
@@ -267,7 +290,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="menu.js.html">menu.js</a>, <a href="menu.js.html#line42">line 42</a>
+        <a href="checkScript.js.html">checkScript.js</a>, <a href="checkScript.js.html#line40">line 40</a>
     </li></ul></dd>
     
 
@@ -298,14 +321,237 @@
 
     
 
-    <h4 class="name" id="drawMenu"><span class="type-signature"></span>drawMenu<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="checkLine"><span class="type-signature"></span>checkLine<span class="signature">(xPos, yPos, xMove, yMove, counterCheck)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    loads data into the menuImg variable
+    Checks one row from a given point in a given direction.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>xPos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The x position at which the check starts</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yPos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The y position at which the check starts</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xMove</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount moved in the x direction -1/0/1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yMove</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount moved in the y direction -1/0/1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>counterCheck</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The counter being checked for</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="checkScript.js.html">checkScript.js</a>, <a href="checkScript.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="TieConditions"><span class="type-signature"></span>TieConditions<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Checks if there are counters in every single slot in the grid and change image to a draw screen
 </div>
 
 
@@ -349,89 +595,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="menu.js.html">menu.js</a>, <a href="menu.js.html#line32">line 32</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="loadMenuImg"><span class="type-signature"></span>loadMenuImg<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    loads data into the menuImg variable
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="menu.js.html">menu.js</a>, <a href="menu.js.html#line23">line 23</a>
+        <a href="checkScript.js.html">checkScript.js</a>, <a href="checkScript.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
