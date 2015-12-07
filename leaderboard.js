@@ -15,7 +15,7 @@ leaderBoard.prototype.loadImg = function() {
 leaderBoard.prototype.drawImgBoard = function () {
     ctx.drawImage(this.boardImg, 0, 0);
     ctx.font = 'bold 20pt Calibri';
-    for(var i=0; i<leaderboardData.length; i++)
+    for(var i=0; i<leaderboardData.length && i<10; i++)
     {
         ctx.textAlign="center"; 
         ctx.fillText(leaderboardData[i].formattedScoreRank, 85, 110+(i*30));

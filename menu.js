@@ -50,9 +50,6 @@ menu.prototype.clicked = function(x,y){
     gamestate="createJoin";
   }
   else if(x>=214*ratioWidht && x<=426*ratioWidht && y>=316*ratioHeight && y<=454*ratioHeight){
-    gamestate="quit";
-  }
-  else{
     gamestate="leaderboard";
     if(googleAPILoaded){
       loadLeaderboard('CgkIw5Xv3M4GEAIQAQ','ALL_TIME','PUBLIC');

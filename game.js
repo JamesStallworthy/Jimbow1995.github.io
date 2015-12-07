@@ -80,11 +80,6 @@ function update(){
         WinS.DrawImgDrawScreen();
         //Player 2 win screen
     }
-    
-    
-    if(gamestate == "quit"){
-      //QUIT code
-    }
 
     multiplayerController();
 	
