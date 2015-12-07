@@ -7,20 +7,21 @@
 Constructor creates the variables for the class.
 @class arrow
 */
-
-
 function arrow(){
     this.arrowLoaded = false;
     this.rightPressed = false; 
     this.leftPressed = false;
     this.spacebarPressed =false;
-    this.pickerPlace = 0; 
-    this.Turn = 0; 
-    this.Playerturn = 0; 
-    this.arrowData = {x:80, y:0, width:75, height:73};
+    this.pickerPlace = 0; //the place of which the arrow 
+    this.Turn = 0; // which turn the game is on 
+    this.Playerturn = 0; // which players turn  
+    //data for the arrow, positon and size
     this.loadArrow();
 }
 
+/** Reset function resets the arrow
+*@memberof arrow
+*/
 arrow.prototype.resetArrow = function(){
     this.arrowLoaded = false;
     this.rightPressed = false; 
@@ -32,7 +33,9 @@ arrow.prototype.resetArrow = function(){
     this.arrowData = {x:80, y:0, width:75, height:73};
 }
 
-/** The lodArrow function gets the image of each colour counter */
+/** The lodArrow function gets the image of each colour counter 
+*@memberof arrow
+*/
 arrow.prototype.loadArrow = function(){
     this.arrowImgPlayer1 = new Image(); 
     this.arrowImgPlayer1.src = "assets/arrowRed.png";
@@ -41,7 +44,9 @@ arrow.prototype.loadArrow = function(){
 }
 
 
-/** The drawArrow function draws the image we got in the last function */
+/** The drawArrow function draws the image we got in the last function 
+*@memberof arrow
+*/
 arrow.prototype.drawArrow = function(){
     this.moveArrow(); 
     if(this.Playerturn == 1)
@@ -54,7 +59,9 @@ arrow.prototype.drawArrow = function(){
         }  
 }
 
-/** The moveArrow function uses the arrow keys to move the arrow */
+/** The moveArrow function uses the arrow keys to move the arrow 
+*@memberof arrow
+*/
 arrow.prototype.moveArrow = function(){
 		
     if(this.rightPressed){
@@ -91,7 +98,9 @@ arrow.prototype.moveArrow = function(){
 		}
 }
 
-/** The moveArrowMouse uses the mouse to click on a place to place a counter*/
+/** The moveArrowMouse uses the mouse to click on a place to place a counter
+*@memberof arrow
+*/
 arrow.prototype.moveArrowMouse = function(xpos,ypos){
                 if(xpos >= 65*ratioWidht && xpos <= 135*ratioWidht){
                     if (gamestate == "takeTurn"){
@@ -194,7 +203,9 @@ arrow.prototype.moveArrowMouse = function(xpos,ypos){
 }
 
 
-/** The placeCounter function uses the spacebar to place the counter in the position of where the arrow is */
+/** The placeCounter function uses the spacebar to place the counter in the position of where the arrow is 
+*@memberof arrow
+*/
 arrow.prototype.placeCounter = function(){
   if(Grid.grid[this.pickerPlace][5] == 0)
     {
@@ -222,3 +233,6 @@ arrow.prototype.placeCounter = function(){
             }
     }
 }
+
+
+
