@@ -12,7 +12,7 @@ function winScreen(){
   this.winImg = new Image();
   this.winImgPly1 = new Image();
   this.winImgPly2 = new Image();
-  this.DrawImgDrawScreen = new Image ();
+  this.DrawImgDrawScreen = new Image();
   this.loadImg();
 }
  /**
