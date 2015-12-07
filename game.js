@@ -71,16 +71,16 @@ function update(){
     if (gamestate == "winnerPlayer2"){
         WinS.drawImgWin2();
         //Player 2 win screen
-    }
-    
+    }    
     if(gamestate == "leaderboard"){
         Leaderboard.drawImgBoard();
         //LeaderBoard screen
     }
-    
-    if(gamestate == "draw"){
-        WinS.DrawImgDrawScreen(); 
+        if (gamestate == "draw"){
+        WinS.DrawImgDrawScreen();
+        //Player 2 win screen
     }
+    
     
     if(gamestate == "quit"){
       //QUIT code
