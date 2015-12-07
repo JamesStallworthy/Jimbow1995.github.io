@@ -79,7 +79,7 @@ function update(){
     }
     
     if(gamestate == "draw"){
-          Wins.DrawImgDrawScreen(); 
+          WinS.DrawImgDrawScreen(); 
     }
     
     if(gamestate == "quit"){
