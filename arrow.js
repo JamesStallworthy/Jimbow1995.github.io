@@ -16,6 +16,7 @@ function arrow(){
     this.Turn = 0; // which turn the game is on 
     this.Playerturn = 0; // which players turn  
     //data for the arrow, positon and size
+    this.arrowData = {x:80, y:0, width:75, height:73};
     this.loadArrow();
 }
 
