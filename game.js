@@ -30,6 +30,7 @@ var Arrow = new arrow();
 var Menu = new menu();
 var Check = new checkScript();
 var WinS = new winScreen();
+var DrawS = new DrawScreen();
 var Leaderboard = new leaderBoard();
 var MultiMenu = new multiplayerMenu();
 
@@ -76,6 +77,10 @@ function update(){
     if(gamestate == "leaderboard"){
         Leaderboard.drawImgBoard();
         //LeaderBoard screen
+    }
+    
+    if(gamestate == "draw"){
+          DrawS.DrawImgDrawScreen(); 
     }
     
     if(gamestate == "quit"){

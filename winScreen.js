@@ -12,7 +12,7 @@ function winScreen(){
   this.winImg = new Image();
   this.winImgPly1 = new Image();
   this.winImgPly2 = new Image();
-  this.winImgDrawScreen = new Image ();
+  this.DrawImgDrawScreen = new Image ();
   this.loadImg();
 }
  /**
@@ -26,8 +26,8 @@ winScreen.prototype.loadImg = function(){
     this.winImgPly1.src ="assets/redwins.jpg"; 
     this.winImgPly2 = new Image();
     this.winImgPly2.src ="assets/yellowwins.jpg"; 
-    this.winImgDrawScreen = new Image();
-    this.winImgDrawScreen.src = "assets/draw.png";
+    this.DrawImgDrawScreen = new Image();
+    this.DrawImgDrawScreen.src = "assets/draw.png";
 }
 
  /**
@@ -54,8 +54,12 @@ winScreen.prototype.drawImgWin2 = function(){
    ctx.drawImage(this.winImgPly2,0,0);
 }
 
-winScreen.prototype.winImgDrawScreen = function(){
-    ctx.drawImage(this.winImgDrawScreen,0,0);
+ /**
+* Draws draw screen
+* @memberof winScreen
+*/
+winScreen.prototype.DrawImgDrawScreen = function(){
+    ctx.drawImage(this.DrawImgDrawScreen,0,0);
 }
 
  /**
