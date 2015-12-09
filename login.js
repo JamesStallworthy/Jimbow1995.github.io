@@ -29,5 +29,10 @@ function load(){
            console.log(response);
            usersFriends=response.items});
       });
+    
+    var newRequest = gapi.client.plus.people.userId({userId: "me"});
+    newRequest.execute(function(response){
+        console.log(response);
+    });
       gamestate = "menu";
 }
