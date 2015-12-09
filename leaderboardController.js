@@ -21,7 +21,8 @@ function loadLeaderboard(id,timeSpan,collection){
     json.collection=collection;
     json.timeSpan=timeSpan;
     var request = gapi.client.games.scores.listWindow(json);
-    request.execute(function(response) { 
+    request.execute(function(response) {
+            console.log(response);
             console.log("Leaderboard loaded, Data: ", response.items);
             leaderboardData = response.items;
         }
