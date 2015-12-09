@@ -44,4 +44,7 @@ function mouseDownHandler()
         MultiMenu.clickedGameList(mouseX,mouseY);
    else if(gamestate == "login")
         loadingS.clicked(mouseX,mouseY);
+    else if(gamestate =="draw")
+        WinS.clicked(mouseX, mouseY);
+        
 }
