@@ -29,6 +29,5 @@ function load(){
            console.log(response);
            usersFriends=response.items});
       });
-    }
       gamestate = "menu";
 }
