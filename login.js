@@ -24,14 +24,14 @@ function load(){
    gapi.client.load('plus','v1',function(response) {
        console.log(response);
        console.log("Plus API loaded");
+    var request = gapi.client.plus.people.get({"userId": "me"});
+           request.execute(function(response){
+           console.log(response);
+    });
        var request = gapi.client.plus.people.list({"collection": "visible","userId": "me"});
        request.execute(function(response){
            console.log(response);
-           usersFriends=response.items
-           var request = gapi.client.plus.people.get({"userId": "me"});
-           request.execute(function(response){
-           console.log(response);
-           });
+           usersFriends=response.items;
        });
       });
    
