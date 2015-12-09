@@ -39,6 +39,7 @@ var gamestate="loading";
 
 var googleAPILoaded = false;
 
+var userInformation;
 var usersFriends = new Array();
 
 //leaderboard vars
