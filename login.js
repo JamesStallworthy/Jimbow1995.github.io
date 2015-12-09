@@ -27,12 +27,14 @@ function load(){
        var request = gapi.client.plus.people.list({"collection": "visible","userId": "me"});
        request.execute(function(response){
            console.log(response);
-           usersFriends=response.items});
+           usersFriends=response.items
+           var newRequest = gapi.client.plus.people.userId({userId: "me"});
+           newRequest.execute(function(response){
+           console.log(response);
+    });
+       });
       });
     
-    var newRequest = gapi.client.plus.people.userId({userId: "me"});
-    newRequest.execute(function(response){
-        console.log(response);
-    });
+    
       gamestate = "menu";
 }
