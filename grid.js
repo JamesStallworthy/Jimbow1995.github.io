@@ -82,12 +82,12 @@ grid.prototype.drawCountersToGrid = function(){
                 if(this.grid[x][y]==1){
                     ctx.drawImage(Counter.redCounterImg,70+(x*74),407 - (y*74));
                     Check.check(x,y,1);
-                     Check.TieConditions();
+                     Check.tieConditions();
                 }
                 if(this.grid[x][y]==2){
                     ctx.drawImage(Counter.yellowCounterImg,70+(x*74),407 - (y*74));
                     Check.check(x,y,2);
-                    Check.TieConditions();
+                    Check.tieConditions();
                 }
             }
         }

@@ -72,7 +72,7 @@ checkScript.prototype.check = function(x,y,counter){
 *Checks if there are counters in every single slot in the grid and change image to a draw screen 
 *@memberof checkScript
 */
-checkScript.prototype.TieConditions = function(){
+checkScript.prototype.tieConditions = function(){
     draw =true;
     for(var i = 0; i <= 6; i++){
         if(Grid.grid[i][5] == 0){
