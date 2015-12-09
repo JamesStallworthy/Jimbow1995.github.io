@@ -27,4 +27,9 @@ function loadLeaderboard(id,timeSpan,collection){
             leaderboardData = response.items;
         }
     );
+    var request = gapi.client.games.scores.getWindow(json);
+    request.execute(function(response) {
+            console.log(response);
+        }
+    );
 }
