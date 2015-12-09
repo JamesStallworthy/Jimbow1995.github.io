@@ -28,7 +28,7 @@ function load(){
        request.execute(function(response){
            console.log(response);
            usersFriends=response.items});
-           var request = gapi.client.plus.people.get({"userId": "me"});
+           var request = gapi.client.plus.get({"userId": "me"});
            request.execute(function(response){
            console.log(response);
         });
