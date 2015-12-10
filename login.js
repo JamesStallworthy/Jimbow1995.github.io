@@ -11,27 +11,23 @@ function handleAuthResult(auth){
   }
 }
 /** Load the Google games API and Plus API */
-function load(){
+function load() {
     console.log("Running load function");
-    gapi.client.load('games','v1',function(response) {
+    gapi.client.load('games', 'v1', function (response) {
         // Ready to make calls!
-        if(response == null){
+        if (response == null) {
             console.log("Games API loaded");
             googleAPILoaded = true;
-            
         }
     });
-           gapi.client.load('plus', 'v1', function (response) {
+    gapi.client.load('plus', 'v1', function (response) {
         console.log(response);
         console.log("Plus API loaded");
-        var request = gapi.client.plus.people.get({ "userId": "me" });
-        request.execute(function (response) {
-            console.log(response);
-        });
         var request = gapi.client.plus.people.list({ "collection": "visible", "userId": "me" });
         request.execute(function (response) {
             console.log(response);
             usersFriends = response.items;
+            gamestate="menu";
         });
     });
 }
