@@ -27,7 +27,7 @@ function createGame() {
 
 /** Joins game with the matchID passed to it
  * @param {integer} id MatchId
- */ 
+ */
 function joinGame(id) {
     player = "p_2";
     participant = "p_1";
@@ -45,7 +45,7 @@ function joinGame(id) {
 
 /** Takes the users turn. The data sent is passed as the argument. 
  * @param {integer} dataToSend Data you want to send
- */ 
+ */
 function takeTurn(dataToSend) {
     gamestate = "processing";
     var request = gapi.client.games.turnBasedMatches.takeTurn(
@@ -96,19 +96,19 @@ function activeGames() {
     request.execute(function (response) {
         invitedToList = new Array();
         var z = 0;
-        for (var i = 0; i < response.items.length; i++){
-            if (response.items[i].userMatchStatus == "USER_INVITED"){
+        for (var i = 0; i < response.items.length; i++) {
+            if (response.items[i].userMatchStatus == "USER_INVITED") {
                 invitedToList[z] = response.items[i];
                 z++;
             }
         }
-        
+
     });
 }
 
 /** Cancel the game with the matchId supplied
  * @param {integer} id MatchId
- */ 
+ */
 function cancelGame(id) {
     var request = gapi.client.games.turnBasedMatches.cancel(
         {
