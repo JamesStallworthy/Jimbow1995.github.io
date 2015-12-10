@@ -20,10 +20,8 @@ function load(){
             googleAPILoaded = true;
             
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
     });
-    gapi.client.load('plus', 'v1', function (response) {
+           gapi.client.load('plus', 'v1', function (response) {
         console.log(response);
         console.log("Plus API loaded");
         var request = gapi.client.plus.people.get({ "userId": "me" });
@@ -36,40 +34,4 @@ function load(){
             usersFriends = response.items;
         });
     });
-
-    gamestate = "menu";
-=======
-      });
-   gapi.client.load('plus','v1',function(response) {
-       console.log(response);
-       console.log("Plus API loaded");
-       
-       var request = gapi.client.plus.people.get({"userId": "me"});
-       request.execute(function(response){
-           userInformation=response;
-           console.log(userInformation);
-       });
-       
-=======
-      });
-   gapi.client.load('plus','v1',function(response) {
-       console.log(response);
-       console.log("Plus API loaded");
-    var request = gapi.client.plus.people.get({"userId": "me"});
-           request.execute(function(response){
-           console.log(response);
-    });
->>>>>>> parent of 19855af... Commit
-       var request = gapi.client.plus.people.list({"collection": "visible","userId": "me"});
-       request.execute(function(response){
-           console.log(response);
-           usersFriends=response.items;
-       });
-      });
-   
-      gamestate = "menu";
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> parent of 19855af... Commit
 }
