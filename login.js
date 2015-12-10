@@ -20,6 +20,7 @@ function load() {
             googleAPILoaded = true;
 
         }
+<<<<<<< HEAD
     });
     gapi.client.load('plus', 'v1', function (response) {
         console.log(response);
@@ -36,4 +37,25 @@ function load() {
     });
 
     gamestate = "menu";
+=======
+      });
+   gapi.client.load('plus','v1',function(response) {
+       console.log(response);
+       console.log("Plus API loaded");
+       
+       var request = gapi.client.plus.people.get({"userId": "me"});
+       request.execute(function(response){
+           userInformation=response;
+           console.log(userInformation);
+       });
+       
+       var request = gapi.client.plus.people.list({"collection": "visible","userId": "me"});
+       request.execute(function(response){
+           console.log(response);
+           usersFriends=response.items;
+       });
+      });
+   
+      gamestate = "menu";
+>>>>>>> origin/master
 }
