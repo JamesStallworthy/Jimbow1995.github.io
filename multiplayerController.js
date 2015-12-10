@@ -25,25 +25,25 @@ var participant;
 var invitedToList = new Array();
 
 /** Extension of the update function to control the multiplayer related game states */
-function multiplayerController() {
-    if (gamestate == "createJoin") {
+function multiplayerController(){
+    if (gamestate == "createJoin"){
         MultiMenu.drawCreateJoin();
     }
-
-    if (gamestate == "invite") {
+    
+    if (gamestate == "invite"){
         MultiMenu.drawInviteList();
     }
-    if (gamestate == "gameList") {
+    if (gamestate == "gameList"){
         MultiMenu.drawGameList();
         checkGameList();
     }
-    else if (gamestate == "takeTurn") {
+    else if (gamestate == "takeTurn"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         Arrow.drawArrow();
         Arrow.placeCounter();
     }
-    else if (gamestate == "waiting") {
+    else if (gamestate == "waiting"){
         Grid.drawGrid();
         Grid.drawCountersToGrid();
         checkTurn();
@@ -51,41 +51,41 @@ function multiplayerController() {
 }
 
 /** Used to update the ID of the player you want to invite */
-function setInviteID(data) {
+function setInviteID(data){
     inviteID = data;
 }
 
 /** Timer to check the status of the game. Calls getData() */
-function checkTurn() {
-    if (!checkTurnWait) {
+function checkTurn(){
+    if(!checkTurnWait){
         checkTurnWait = true;
-        setTimeout(function () {
+        setTimeout(function(){
             console.log("Checking after 10seconds");
             checkTurnWait = false;
-            if (gamestate == "waiting" && recieved) {
-                getData();
+            if (gamestate == "waiting" && recieved){
+                getData(); 
             }
-        }, 5000);
+        },5000);
     }
 }
 
 /** Timer to update the invite list */
-function checkGameList() {
-    if (!checkInviteList) {
+function checkGameList(){
+    if(!checkInviteList){
         checkInviteList = true;
-        setTimeout(function () {
+        setTimeout(function(){
             console.log("Checking after 5 seconds");
             checkInviteList = false;
-            if (gamestate == "gameList") {
-                activeGames();
+            if (gamestate == "gameList"){
+                activeGames(); 
             }
-        }, 5000);
+        },5000);
     }
 }
 
 /** Used to place the other users counter into the current grid
  * @param {integer} col Column number
- */
-function multiplayerPlaceCounter(col) {
-    Grid.insertCounter(col, 2);
+ */ 
+function multiplayerPlaceCounter(col){
+    Grid.insertCounter(col,2);
 }

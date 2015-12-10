@@ -7,8 +7,8 @@ function multiplayerMenu() {
     this.selectedInvite;
 }
 
-multiplayerMenu.prototype.loadImg = function () {
-
+multiplayerMenu.prototype.loadImg = function() {
+    
     this.createJoin = new Image();
     this.Invite = new Image();
     this.GameList = new Image();
@@ -21,66 +21,67 @@ multiplayerMenu.prototype.drawCreateJoin = function () {
     ctx.drawImage(this.createJoin, 0, 0);
 }
 
-multiplayerMenu.prototype.drawInviteList = function () {
+multiplayerMenu.prototype.drawInviteList = function(){
     ctx.drawImage(this.Invite, 0, 0);
-    ctx.textAlign = "left";
+    ctx.textAlign="left"; 
     ctx.font = 'bold 10pt Calibri';
-    for (var i = 0; i < usersFriends.length; i++) {
-        if (this.selected == i) {
-            ctx.fillStyle = "#CC0000";
-        } else {
-            ctx.fillStyle = "#000000";
-        }
-        ctx.fillText(usersFriends[i].displayName, 60, 30 + (i * 20));
+    for(var i=0; i<usersFriends.length; i++)
+    {
+       if (this.selected == i){
+           ctx.fillStyle = "#CC0000"; 
+       }else{
+           ctx.fillStyle = "#000000";
+       }
+        ctx.fillText(usersFriends[i].displayName, 60, 30+(i*20));
     }
 }
 
-multiplayerMenu.prototype.drawGameList = function () {
+multiplayerMenu.prototype.drawGameList = function(){
     ctx.drawImage(this.GameList, 0, 0);
-    ctx.textAlign = "left";
+    ctx.textAlign="left"; 
     ctx.font = 'bold 10pt Calibri';
-    for (var i = 0; i < invitedToList.length; i++) {
-        if (this.selectedInvite == i) {
-            ctx.fillStyle = "#CC0000";
-        } else {
-            ctx.fillStyle = "#000000";
-        }
-        ctx.fillText(invitedToList[i].participants[0].player.displayName, 60, 30 + (i * 20));
+    for(var i=0; i<invitedToList.length; i++){
+        if (this.selectedInvite == i){
+           ctx.fillStyle = "#CC0000"; 
+       }else{
+           ctx.fillStyle = "#000000";
+       }
+        ctx.fillText(invitedToList[i].participants[0].player.displayName, 60, 30+(i*20));
     }
 }
 
-multiplayerMenu.prototype.clicked = function (x, y) {
-    if (x < 320 * ratioWidht) {
+multiplayerMenu.prototype.clicked = function(x,y) {
+    if (x < 320*ratioWidht){
         console.log("gamestate is now invite");
         gamestate = "invite";
     }
-    else {
+    else{
         activeGames();
         gamestate = "gameList";
     }
 }
 
-multiplayerMenu.prototype.clickedInvite = function (x, y) {
-    if (x < 320 * ratioWidht) {
-        var pos = Math.round((y - (30 * ratioHeight)) / (20 * ratioHeight));
-        this.selected = pos;
+multiplayerMenu.prototype.clickedInvite = function(x,y) {
+    if (x < 320*ratioWidht){
+        var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
+        this.selected = pos; 
     }
-    if (x > 320 * ratioWidht) {
+    if (x > 320*ratioWidht){
         inviteID = usersFriends[this.selected].id;
         createGame();
     }
 }
 
-multiplayerMenu.prototype.clickedGameList = function (x, y) {
-    if (x < 320 * ratioWidht) {
-        var pos = Math.round((y - (30 * ratioHeight)) / (20 * ratioHeight));
-        this.selectedInvite = pos;
+multiplayerMenu.prototype.clickedGameList = function(x,y) {
+    if (x < 320*ratioWidht){
+        var pos = Math.round((y-(30*ratioHeight)) / (20*ratioHeight));
+        this.selectedInvite = pos; 
     }
-    if (x > 320 * ratioWidht) {
-        if (y < 240 * ratioHeight) {
+    if (x > 320*ratioWidht){
+        if (y < 240*ratioHeight){
             joinGame(invitedToList[this.selectedInvite].matchId);
         }
-        else {
+        else{
             cancelGame(invitedToList[this.selectedInvite].matchId);
         }
     }
